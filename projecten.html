@@ -26,6 +26,14 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tfmconstruct.be/"},{"@type":"ListItem","position":2,"name":"Projecten","item":"https://www.tfmconstruct.be/projecten.html"}]}
   </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Nieuwbouw — gevelisolatie met crepi afwerking","url":"https://www.tfmconstruct.be/projecten.html#crepi"},
+    {"@type":"ListItem","position":2,"name":"Vrijstaande woning — gevelisolatie met steenstrips afwerking","url":"https://www.tfmconstruct.be/projecten.html#steenstrips"},
+    {"@type":"ListItem","position":3,"name":"Residentiële woning — vernieuwde gevel met kaleien","url":"https://www.tfmconstruct.be/projecten.html#kaleien"},
+    {"@type":"ListItem","position":4,"name":"Residentiële woning — gevelrenovatie met spuitkurk","url":"https://www.tfmconstruct.be/projecten.html#spuitkurk"}
+  ]}
+  </script>
 
   <style>
     /* ── Minimalist project cards ── */
@@ -57,7 +65,8 @@
     .lbl-na   { background:rgba(232,165,0,.9);  color:var(--navy); }
 
     /* Expand toggle */
-    .pcard-toggle { display:flex; align-items:center; justify-content:flex-end; padding:16px 28px; border-top:1px solid rgba(5,40,76,.06); }
+    .pcard-toggle { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; padding:16px 28px; border-top:1px solid rgba(5,40,76,.06); }
+    .pcard-svc-link { font-family:'Barlow Condensed',sans-serif; font-size:.85rem; font-weight:700; color:var(--navy); text-decoration:underline; }
     .pcard-toggle-btn { display:inline-flex; align-items:center; gap:8px; font-family:'Barlow Condensed',sans-serif; font-size:.78rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--navy); cursor:pointer; background:none; border:1px solid rgba(5,40,76,.18); border-radius:4px; padding:.45rem 1rem; transition:background .2s, color .2s, border-color .2s; }
     .pcard-toggle-btn:hover { background:var(--navy); color:#fff; border-color:var(--navy); }
     .pcard-toggle-btn svg { width:14px; height:14px; flex-shrink:0; transition:transform .3s ease; }
@@ -206,7 +215,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
         </div>
       </div>
-      <div class="pcard-toggle"><button class="pcard-toggle-btn" aria-expanded="false"data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-toggle"><a href="/diensten/crepi/" class="pcard-svc-link">Bekijk de dienst: Crepi &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false" data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="pcard-extra">
         <div class="pcard-photo" data-lb>
           <img src="/isolatie_.jpeg"
@@ -261,7 +270,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
         </div>
       </div>
-      <div class="pcard-toggle"><button class="pcard-toggle-btn" aria-expanded="false"data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-toggle"><a href="/diensten/steenstrips/" class="pcard-svc-link">Bekijk de dienst: Steenstrips &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false" data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="pcard-extra">
         <div class="pcard-photo" data-lb>
           <img src="/steenstrips_op_het_werk.JPG"
@@ -316,7 +325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
         </div>
       </div>
-      <div class="pcard-toggle"><button class="pcard-toggle-btn" aria-expanded="false"data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-toggle"><a href="/diensten/kaleien/" class="pcard-svc-link">Bekijk de dienst: Kaleien &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false" data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="pcard-extra">
         <div class="pcard-photo" data-lb>
           <img src="/kaleien_op_het_werk.png"
@@ -371,7 +380,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
         </div>
       </div>
-      <div class="pcard-toggle"><button class="pcard-toggle-btn" aria-expanded="false"data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-toggle"><a href="/diensten/spuitkurk/" class="pcard-svc-link">Bekijk de dienst: Spuitkurk &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false" data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="pcard-extra">
         <div class="pcard-photo" data-lb>
           <img src="/spuitkurk_tijdens_zwart.png"
