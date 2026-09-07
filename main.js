@@ -76,26 +76,47 @@
     });
   });
 
-  /* ---------- WhatsApp tracking ---------- */
-  var waBtn = document.querySelector('.wa-float');
-  if (waBtn) {
-    waBtn.addEventListener('click', function () {
-      console.log('[TFM] WhatsApp button clicked');
-    });
+  /* ---------- GTM conversion tracking: phone / whatsapp / email clicks ---------- */
+  window.dataLayer = window.dataLayer || [];
+  function pushEvent(eventName, extra) {
+    var data = { event: eventName };
+    if (extra) for (var k in extra) data[k] = extra[k];
+    window.dataLayer.push(data);
   }
+  document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
+    a.addEventListener('click', function () { pushEvent('phone_click', { link_url: a.getAttribute('href') }); });
+  });
+  document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+    a.addEventListener('click', function () { pushEvent('email_click', { link_url: a.getAttribute('href') }); });
+  });
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function (a) {
+    a.addEventListener('click', function () { pushEvent('whatsapp_click', { link_url: a.getAttribute('href') }); });
+  });
 
-  /* ---------- Contact form ---------- */
-  var forms = document.querySelectorAll('.contact-form');
-  forms.forEach(function (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+  /* ---------- Contact form: real submit to FormSubmit + GTM event ---------- */
+  document.querySelectorAll('.contact-form').forEach(function (form) {
+    form.addEventListener('submit', function () {
+      var dienstField = form.querySelector('[name="dienst"]');
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'form_submit',
+        form_name: 'offerte_aanvraag',
+        service_requested: dienstField ? dienstField.value : undefined
+      });
       var btn = form.querySelector('[type="submit"]');
-      if (btn) {
-        btn.textContent = 'Verstuurd ✓';
-        btn.disabled = true;
-        btn.style.background = '#28a745';
-        btn.style.color = '#fff';
-      }
+      if (btn) { btn.disabled = true; btn.textContent = 'Bezig met versturen…'; }
+      // No preventDefault: the form posts natively to FormSubmit and the
+      // visitor is redirected to /bedankt/ via the hidden _next field.
+    });
+  });
+
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var q = item.querySelector('.faq-q');
+    if (!q) return;
+    q.addEventListener('click', function () {
+      var open = item.classList.toggle('open');
+      q.setAttribute('aria-expanded', open);
     });
   });
 

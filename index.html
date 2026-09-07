@@ -369,25 +369,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="contact-grid">
       <div class="reveal">
-        <form class="contact-form" novalidate>
+        <form class="contact-form" action="https://formsubmit.co/t.f.m.construkt@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nieuwe offerteaanvraag — T.F.M. Construct website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://www.tfmconstruct.be/bedankt/">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-group">
             <label for="naam" data-i18n="form.naam">Naam *</label>
-            <input type="text" id="naam" name="naam" placeholder="Jan Janssen" data-i18n-ph="form.ph.naam" required>
+            <input type="text" id="naam" name="naam" placeholder="Jan Janssen" data-i18n-ph="form.ph.naam" required autocomplete="name">
           </div>
           <div class="form-group">
             <label for="tel" data-i18n="form.tel">Telefoonnummer *</label>
-            <input type="tel" id="tel" name="tel" placeholder="+32 4 75 00 00 00" required>
+            <input type="tel" id="tel" name="tel" placeholder="+32 4 75 00 00 00" required autocomplete="tel">
           </div>
           <div class="form-group">
             <label for="email" data-i18n="form.email">E-mailadres *</label>
-            <input type="email" id="email" name="email" placeholder="jan@email.be" required>
+            <input type="email" id="email" name="email" placeholder="jan@email.be" required autocomplete="email">
           </div>
           <div class="form-group">
-            <label for="bericht" data-i18n="form.bericht">Bericht</label>
+            <label for="postcode" data-i18n="form.postcode">Postcode *</label>
+            <input type="text" id="postcode" name="postcode" placeholder="1600" pattern="[0-9]{4}" inputmode="numeric" maxlength="4" required autocomplete="postal-code">
+          </div>
+          <div class="form-group">
+            <label for="dienst" data-i18n="form.dienst">Gewenste dienst *</label>
+            <select id="dienst" name="dienst" required>
+              <option value="" disabled selected data-i18n-opt="form.dienst.select">Selecteer een dienst</option>
+              <option value="Gevelisolatie">Gevelisolatie</option>
+              <option value="Crepi">Crepi</option>
+              <option value="Spuitkurk">Spuitkurk</option>
+              <option value="Steenstrips">Steenstrips</option>
+              <option value="Kaleien">Kaleien</option>
+              <option value="Dakrenovatie">Dakrenovatie</option>
+              <option value="Dakisolatie">Dakisolatie</option>
+              <option value="Andere werken" data-i18n-opt="form.dienst.andere">Andere werken</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bericht" data-i18n="form.bericht">Bericht <span style="font-weight:400;text-transform:none;font-family:Inter,sans-serif;font-size:.8rem;color:#888">(optioneel)</span></label>
             <textarea id="bericht" name="bericht" placeholder="Beschrijf uw project..." data-i18n-ph="form.ph.bericht"></textarea>
           </div>
-          <button type="submit" class="btn-primary form-submit" data-i18n="form.submit">Verstuur aanvraag</button>
-          <p class="form-note" data-i18n="form.note">Wij antwoorden binnen 24 uur. Uw gegevens worden nooit gedeeld met derden.</p>
+          <button type="submit" class="btn-primary form-submit" data-i18n="form.submit">Vraag gratis plaatsbezoek aan</button>
+          <p class="form-note" data-i18n="form.note">Uw gegevens worden nooit gedeeld met derden.</p>
         </form>
       </div>
       <div class="contact-info reveal-r">

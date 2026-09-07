@@ -102,14 +102,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="contact-grid" style="margin-top:3rem;align-items:start">
       <!-- FORM -->
       <div class="reveal">
-        <form class="contact-form" novalidate>
+        <form class="contact-form" action="https://formsubmit.co/t.f.m.construkt@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nieuwe offerteaanvraag — T.F.M. Construct website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://www.tfmconstruct.be/bedankt/">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-group">
             <label for="naam" data-i18n="cnt.naam">Naam *</label>
             <input type="text" id="naam" name="naam" placeholder="Jan Janssen" data-i18n-ph="cnt.ph.naam" required autocomplete="name">
-          </div>
-          <div class="form-group">
-            <label for="bedrijf" data-i18n="cnt.bedrijf">Bedrijfsnaam <span style="font-weight:400;text-transform:none;font-family:Inter,sans-serif;font-size:.8rem;color:#888">(optioneel)</span></label>
-            <input type="text" id="bedrijf" name="bedrijf" placeholder="Uw bedrijf BV" data-i18n-ph="cnt.ph.bedrijf" autocomplete="organization">
           </div>
           <div class="form-group">
             <label for="tel" data-i18n="cnt.tel">Telefoonnummer *</label>
@@ -120,26 +121,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <input type="email" id="email" name="email" placeholder="jan@email.be" required autocomplete="email">
           </div>
           <div class="form-group">
-            <label for="dienst" data-i18n="cnt.dienst">Gewenste dienst</label>
-            <select id="dienst" name="dienst">
+            <label for="postcode" data-i18n="cnt.postcode">Postcode *</label>
+            <input type="text" id="postcode" name="postcode" placeholder="1600" pattern="[0-9]{4}" inputmode="numeric" maxlength="4" required autocomplete="postal-code">
+          </div>
+          <div class="form-group">
+            <label for="dienst" data-i18n="cnt.dienst">Gewenste dienst *</label>
+            <select id="dienst" name="dienst" required>
               <option value="" disabled selected data-i18n-opt="cnt.dienst.select">Selecteer een dienst</option>
-              <option value="spuitkurk">Spuitkurk</option>
-              <option value="crepi">Crepi</option>
-              <option value="gevelisolatie">Gevelisolatie</option>
-              <option value="kaleien">Kaleien</option>
-              <option value="steenstrips">Steenstrips</option>
-              <option value="dakrenovatie">Dakrenovatie</option>
-              <option value="dakisolatie">Dakisolatie</option>
-              <option value="combinatie" data-i18n-opt="cnt.dienst.combo">Combinatie van diensten</option>
-              <option value="advies" data-i18n-opt="cnt.dienst.advies">Advies / Ik weet het nog niet</option>
+              <option value="Gevelisolatie">Gevelisolatie</option>
+              <option value="Crepi">Crepi</option>
+              <option value="Spuitkurk">Spuitkurk</option>
+              <option value="Steenstrips">Steenstrips</option>
+              <option value="Kaleien">Kaleien</option>
+              <option value="Dakrenovatie">Dakrenovatie</option>
+              <option value="Dakisolatie">Dakisolatie</option>
+              <option value="Andere werken" data-i18n-opt="cnt.dienst.andere">Andere werken</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="bericht" data-i18n="cnt.bericht">Bericht *</label>
-            <textarea id="bericht" name="bericht" rows="5" placeholder="Beschrijf uw project, adres, gewenste timing..." data-i18n-ph="cnt.ph.bericht" required></textarea>
+            <label for="bericht" data-i18n="cnt.bericht">Bericht <span style="font-weight:400;text-transform:none;font-family:Inter,sans-serif;font-size:.8rem;color:#888">(optioneel)</span></label>
+            <textarea id="bericht" name="bericht" rows="5" placeholder="Beschrijf uw project, adres, gewenste timing..." data-i18n-ph="cnt.ph.bericht"></textarea>
+            <p style="font-size:.8rem;color:#888;margin-top:.4rem" data-i18n="cnt.foto.tip">Foto&#39;s van uw gevel of dak? Stuur die makkelijk mee via <a href="https://wa.me/32471916136" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600">WhatsApp</a>.</p>
           </div>
-          <button type="submit" class="btn-primary form-submit" data-i18n="cnt.submit">Verstuur aanvraag</button>
-          <p class="form-note" data-i18n="cnt.note">Wij antwoorden binnen 24 uur. Uw gegevens worden strikt vertrouwelijk behandeld en nooit gedeeld met derden.</p>
+          <button type="submit" class="btn-primary form-submit" data-i18n="cnt.submit">Vraag gratis plaatsbezoek aan</button>
+          <p class="form-note" data-i18n="cnt.note">Uw gegevens worden strikt vertrouwelijk behandeld en nooit gedeeld met derden.</p>
         </form>
       </div>
 
@@ -162,7 +167,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div>
             <h4 data-i18n="cnt.email.label">E-mail</h4>
             <a href="mailto:t.f.m.construkt@gmail.com">t.f.m.construkt@gmail.com</a>
-            <p style="font-size:.82rem;color:#888;margin-top:.2rem" data-i18n="cnt.email.sub">Antwoord binnen 24 uur</p>
+            <p style="font-size:.82rem;color:#888;margin-top:.2rem" data-i18n="cnt.email.sub">Wij nemen zo snel mogelijk contact op</p>
           </div>
         </div>
         <div class="info-card">
