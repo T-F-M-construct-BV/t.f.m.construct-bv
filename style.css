@@ -86,7 +86,7 @@ section{padding:80px 0}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* Mobile menu */
-.mobile-menu{display:none;position:fixed;inset:0;background:#fff;z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2rem;padding:2rem;border-top:4px solid var(--gold)}
+.mobile-menu{display:none;position:fixed;inset:0;background:#fff;z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;padding:2rem;border-top:4px solid var(--gold);overflow-y:auto}
 .mobile-menu.open{display:flex}
 .mobile-menu a{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--navy);letter-spacing:.08em;transition:color var(--transition)}
 .mobile-menu a:hover,.mobile-menu a.active{color:var(--gold)}
