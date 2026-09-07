@@ -83,14 +83,17 @@
     if (extra) for (var k in extra) data[k] = extra[k];
     window.dataLayer.push(data);
   }
-  document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
-    a.addEventListener('click', function () { pushEvent('phone_click', { link_url: a.getAttribute('href') }); });
-  });
-  document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
-    a.addEventListener('click', function () { pushEvent('email_click', { link_url: a.getAttribute('href') }); });
-  });
-  document.querySelectorAll('a[href*="wa.me"]').forEach(function (a) {
-    a.addEventListener('click', function () { pushEvent('whatsapp_click', { link_url: a.getAttribute('href') }); });
+  /* Event delegation on document — keeps tracking working even for links
+     inside data-i18n containers, whose innerHTML lang.js replaces (and
+     which would otherwise silently lose any listener bound directly to
+     the original element). */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('tel:') === 0) pushEvent('phone_click', { link_url: href });
+    else if (href.indexOf('mailto:') === 0) pushEvent('email_click', { link_url: href });
+    else if (href.indexOf('wa.me') !== -1) pushEvent('whatsapp_click', { link_url: href });
   });
 
   /* ---------- Contact form: real submit to FormSubmit + GTM event ---------- */
