@@ -20,10 +20,10 @@ const LANG = {
     'sticky.cta':'Offerte aanvragen',
     /* INDEX — HERO */
     'idx.hero.label':'T.F.M. Construct BV &mdash; Gevel- &amp; Dakspecialist in Vlaanderen',
-    'idx.hero.h1':'Uw gevel en dak in vakkundige handen',
-    'idx.hero.sub':'Van spuitkurk tot dakrenovatie &mdash; wij leveren totaaloplossingen voor gevel en dak, voor particulieren en bedrijven in heel Vlaanderen.',
-    'idx.hero.btn1':'Gratis offerte aanvragen',
-    'idx.hero.btn2':'Onze projecten bekijken',
+    'idx.hero.h1':'Gevelrenovatie &amp; dakwerken in Vlaanderen',
+    'idx.hero.sub':'Van gevelisolatie en crepi tot dakisolatie en volledige dakrenovatie. E&eacute;n ervaren team voor advies, uitvoering en afwerking.',
+    'idx.hero.btn1':'Plan gratis plaatsbezoek',
+    'idx.hero.btn2':'Bekijk onze projecten',
     'stat.garantie':'Garantie',
     'stat.offerte':'Offerte',
     'stat.plaatsbezoek':'Plaatsbezoek',
@@ -57,7 +57,7 @@ const LANG = {
     'idx.map.title':'Actief in heel Vlaanderen',
     'idx.map.p1':'Van kust tot Kempen &mdash; wij komen naar u toe. T.F.M. Construct BV is actief in alle vijf de Vlaamse provincies en voert opdrachten uit bij particulieren, bedrijven en overheden.',
     'idx.map.p2':'Of u nu in Gent, Antwerpen, Brugge, Hasselt of Leuven woont &mdash; onze vakbekwame teams staan voor u klaar voor een gratis plaatsbezoek en vrijblijvende offerte.',
-    'idx.map.btn':'Gratis plaatsbezoek aanvragen',
+    'idx.map.btn':'Plan gratis plaatsbezoek',
     /* INDEX — PROCESS */
     'process.label':'Werkwijze',
     'process.title':'Hoe wij werken',
@@ -81,7 +81,7 @@ const LANG = {
     /* INDEX — CTA */
     'cta.h2':'Klaar voor een perfecte gevel of dak?',
     'cta.p':'Neem vandaag nog contact op voor een gratis plaatsbezoek en vrijblijvende offerte. Wij staan voor u klaar in heel Vlaanderen.',
-    'cta.btn':'Offerte aanvragen',
+    'cta.btn':'Plan gratis plaatsbezoek',
     /* INDEX — CONTACT FORM */
     'form.label':'Neem contact op',
     'form.title':'Vraag uw offerte aan',
@@ -195,7 +195,7 @@ const LANG = {
     'dnt.d07.btn':'Offerte voor dakisolatie',
     'dnt.cta.h2':'Welke geveloplossing past bij u?',
     'dnt.cta.p':'Onze expert adviseert u kosteloos tijdens een gratis plaatsbezoek. Geen verplichtingen, wel een eerlijk en deskundig advies.',
-    'dnt.cta.btn':'Gratis advies aanvragen',
+    'dnt.cta.btn':'Plan gratis plaatsbezoek',
     /* PROJECTEN */
     'prj.hero.label':'Onze realisaties',
     'prj.hero.h1':'Projecten',
@@ -303,7 +303,7 @@ const LANG = {
     'ons.adv12':'Nazorg en opvolging na oplevering',
     'ons.cta.h2':'Klaar om uw gevel of dak te laten vernieuwen?',
     'ons.cta.p':'Neem vandaag nog contact op. Wij plannen een gratis plaatsbezoek en bezorgen u een transparante offerte zonder verplichtingen.',
-    'ons.cta.btn':'Contact opnemen',
+    'ons.cta.btn':'Plan gratis plaatsbezoek',
     /* BREADCRUMB */
     'bc.home':'Home',
     'bc.diensten':'Diensten',
@@ -332,9 +332,9 @@ const LANG = {
     'sticky.cta':'Demander un devis',
     /* INDEX — HERO */
     'idx.hero.label':'T.F.M. Construct BV &mdash; Spécialiste façades &amp; toitures en Flandre',
-    'idx.hero.h1':'Votre façade et toiture entre des mains expertes',
-    'idx.hero.sub':'De l\'enduit liège à la rénovation de toiture &mdash; nous offrons des solutions complètes pour façades et toitures, pour particuliers et entreprises dans toute la Flandre.',
-    'idx.hero.btn1':'Demander un devis gratuit',
+    'idx.hero.h1':'Rénovation de façade &amp; travaux de toiture en Flandre',
+    'idx.hero.sub':'De l\'isolation de façade et du crépi à l\'isolation et la rénovation complète de toiture. Une équipe expérimentée pour le conseil, l\'exécution et la finition.',
+    'idx.hero.btn1':'Planifiez une visite gratuite',
     'idx.hero.btn2':'Voir nos réalisations',
     'stat.garantie':'Garantie',
     'stat.offerte':'Devis',
@@ -369,7 +369,7 @@ const LANG = {
     'idx.map.title':'Actif dans toute la Flandre',
     'idx.map.p1':'De la côte aux Campines &mdash; nous nous déplaçons chez vous. T.F.M. Construct BV est actif dans les cinq provinces flamandes et réalise des chantiers pour particuliers, entreprises et pouvoirs publics.',
     'idx.map.p2':'Que vous habitiez à Gand, Anvers, Bruges, Hasselt ou Louvain &mdash; nos équipes qualifiées sont disponibles pour une visite gratuite et un devis sans engagement.',
-    'idx.map.btn':'Demander une visite gratuite',
+    'idx.map.btn':'Planifiez une visite gratuite',
     /* INDEX — PROCESS */
     'process.label':'Notre méthode',
     'process.title':'Comment nous travaillons',
@@ -393,7 +393,7 @@ const LANG = {
     /* INDEX — CTA */
     'cta.h2':'Prêt pour une façade ou une toiture parfaite&nbsp;?',
     'cta.p':'Contactez-nous dès aujourd\'hui pour une visite gratuite et un devis sans engagement. Nous sommes à votre service dans toute la Flandre.',
-    'cta.btn':'Demander un devis',
+    'cta.btn':'Planifiez une visite gratuite',
     /* INDEX — CONTACT FORM */
     'form.label':'Nous contacter',
     'form.title':'Demandez votre devis',
@@ -507,7 +507,7 @@ const LANG = {
     'dnt.d07.btn':'Devis pour isolation de toiture',
     'dnt.cta.h2':'Quelle solution de façade vous convient&nbsp;?',
     'dnt.cta.p':'Notre expert vous conseille gratuitement lors d\'une visite sur place. Sans engagement, avec un avis honnête et professionnel.',
-    'dnt.cta.btn':'Demander un conseil gratuit',
+    'dnt.cta.btn':'Planifiez une visite gratuite',
     /* PROJECTEN */
     'prj.hero.label':'Nos réalisations',
     'prj.hero.h1':'Réalisations',
@@ -615,7 +615,7 @@ const LANG = {
     'ons.adv12':'Suivi et service après livraison',
     'ons.cta.h2':'Prêt à rénover votre façade ou votre toiture&nbsp;?',
     'ons.cta.p':'Contactez-nous dès aujourd\'hui. Nous planifions une visite gratuite et vous remettons un devis transparent sans engagement.',
-    'ons.cta.btn':'Nous contacter',
+    'ons.cta.btn':'Planifiez une visite gratuite',
     /* BREADCRUMB */
     'bc.home':'Accueil',
     'bc.diensten':'Services',
