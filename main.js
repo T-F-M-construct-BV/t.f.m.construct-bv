@@ -98,13 +98,34 @@
 
   /* ---------- Contact form: real submit to FormSubmit + GTM event ---------- */
   document.querySelectorAll('.contact-form').forEach(function (form) {
+
+    /* First meaningful interaction with the lead form */
+    form.addEventListener('focusin', function () {
+      pushEvent('form_start', {
+        form_name: 'offerte_aanvraag'
+      });
+    }, { once: true });
+
     form.addEventListener('submit', function () {
       var dienstField = form.querySelector('[name="dienst"]');
+      var serviceRequested = dienstField ? dienstField.value : undefined;
+
+      /*
+       * Remember that a genuine form submission was started.
+       * /bedankt/ consumes this marker and emits generate_lead once.
+       */
+      try {
+        sessionStorage.setItem('tfm_lead_pending', JSON.stringify({
+          ts: Date.now(),
+          service_requested: serviceRequested || ''
+        }));
+      } catch (e) {}
+
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: 'form_submit',
         form_name: 'offerte_aanvraag',
-        service_requested: dienstField ? dienstField.value : undefined
+        service_requested: serviceRequested
       });
       var btn = form.querySelector('[type="submit"]');
       if (btn) { btn.disabled = true; btn.textContent = 'Bezig met versturen…'; }

@@ -29,10 +29,36 @@
   <link rel="stylesheet" href="/style.css">
 
   <script>
-    /* Lead conversion signal — fires once when the thank-you page is reached
-       after a real form submission (via the form's _next redirect). */
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'form_submit_success' });
+    /*
+     * Confirmed lead conversion.
+     * Only fires when this page follows a recent form submission from
+     * the same browser tab, and the marker is consumed after firing.
+     */
+    (function () {
+      var key = 'tfm_lead_pending';
+
+      try {
+        var raw = sessionStorage.getItem(key);
+        if (!raw) return;
+
+        var pending = JSON.parse(raw);
+        var maxAge = 15 * 60 * 1000;
+
+        if (!pending.ts || Date.now() - pending.ts > maxAge) {
+          sessionStorage.removeItem(key);
+          return;
+        }
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'generate_lead',
+          form_name: 'offerte_aanvraag',
+          service_requested: pending.service_requested || undefined
+        });
+
+        sessionStorage.removeItem(key);
+      } catch (e) {}
+    })();
   </script>
 </head>
 <body>
