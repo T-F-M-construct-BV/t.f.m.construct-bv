@@ -1,8 +1,61 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+  <!-- TFM Consent Mode v2 -->
+<script>
+(function () {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () {
+    window.dataLayer.push(arguments);
+  };
+
+  var saved = null;
+
+  try {
+    saved = JSON.parse(
+      localStorage.getItem('tfm_consent_v1')
+    );
+  } catch (e) {}
+
+  var analytics =
+    saved && saved.analytics === true
+      ? 'granted'
+      : 'denied';
+
+  var marketing =
+    saved && saved.marketing === true
+      ? 'granted'
+      : 'denied';
+
+  gtag('consent', 'default', {
+    analytics_storage: analytics,
+    ad_storage: marketing,
+    ad_user_data: marketing,
+    ad_personalization: marketing,
+    functionality_storage: 'granted',
+    security_storage: 'granted',
+    wait_for_update: 500
+  });
+
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+})();
+</script>
+<!-- End TFM Consent Mode v2 -->
+
+<!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WX4C8QT3');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <title>Over ons — T.F.M. Construct BV | Gevel- &amp; Dakspecialist in Vlaanderen</title>
   <meta name="description" content="Leer T.F.M. Construct BV kennen: uw betrouwbare specialist in gevel- en dakwerken in Vlaanderen. Passie voor vakmanschap, kwaliteitsgarantie en transparante aanpak.">
   <link rel="canonical" href="https://www.tfmconstruct.be/over-ons/">
@@ -27,12 +80,16 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type":"ListItem","position":1,"name":"Home","item":"https://www.tfmconstruct.be/"},
-      {"@type":"ListItem","position":2,"name":"Over ons","item":"https://www.tfmconstruct.be/over-ons/"}
+      {"@type":"ListItem","position":2,"name":"Over ons","item":"https://www.tfmconstruct.be/over-ons.html"}
     ]
   }
   </script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WX4C8QT3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- NAV -->
 <nav class="nav" role="navigation" aria-label="Hoofdnavigatie">
@@ -43,7 +100,18 @@
     <div class="nav-links">
       <a href="/" data-i18n="nav.home">Home</a>
       <a href="/over-ons/" class="active" data-i18n="nav.over">Over ons</a>
-      <a href="/diensten/" data-i18n="nav.diensten">Diensten</a>
+    <div class="nav-drop">
+      <a href="/diensten/" data-i18n="nav.diensten">Diensten<svg class="nav-drop-caret" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+      <div class="nav-drop-menu">
+        <a href="/diensten/gevelisolatie/">Gevelisolatie</a>
+        <a href="/diensten/crepi/">Crepi</a>
+        <a href="/diensten/spuitkurk/">Spuitkurk</a>
+        <a href="/diensten/steenstrips/">Steenstrips</a>
+        <a href="/diensten/kaleien/">Kaleien</a>
+        <a href="/diensten/dakrenovatie/">Dakrenovatie</a>
+        <a href="/diensten/dakisolatie/">Dakisolatie</a>
+      </div>
+    </div>
       <a href="/projecten/" data-i18n="nav.projecten">Projecten</a>
       <a href="/contact/" data-i18n="nav.contact">Contact</a>
     </div>
@@ -60,7 +128,16 @@
 <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobiel menu">
   <a href="/" data-i18n="nav.home">Home</a>
   <a href="/over-ons/" class="active" data-i18n="nav.over">Over ons</a>
-  <a href="/diensten/" data-i18n="nav.diensten">Diensten</a>
+  <div class="mobile-submenu">
+    <a href="/diensten/" data-i18n="nav.diensten" style="font-size:1.4rem!important;margin-bottom:.4rem">Diensten</a>
+    <a href="/diensten/gevelisolatie/">Gevelisolatie</a>
+    <a href="/diensten/crepi/">Crepi</a>
+    <a href="/diensten/spuitkurk/">Spuitkurk</a>
+    <a href="/diensten/steenstrips/">Steenstrips</a>
+    <a href="/diensten/kaleien/">Kaleien</a>
+    <a href="/diensten/dakrenovatie/">Dakrenovatie</a>
+    <a href="/diensten/dakisolatie/">Dakisolatie</a>
+  </div>
   <a href="/projecten/" data-i18n="nav.projecten">Projecten</a>
   <a href="/contact/" data-i18n="nav.contact">Contact</a>
   <a href="/contact/" class="btn-primary" data-i18n="nav.cta">Offerte aanvragen</a>
@@ -93,7 +170,7 @@
         <p data-i18n="ons.story.p4">Wij geloven in langetermijnrelaties met onze klanten. Daarom bieden wij 10 jaar garantie op al onze gevel- en dakwerken en staan wij ook na de oplevering voor u klaar.</p>
       </div>
       <div class="story-img reveal-r">
-        <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/GEVELWERKEN-2.jpg"
+        <img src="/crepi_op_het_werk.png"
              alt="T.F.M. Construct BV team aan het werk" width="600" height="400" loading="lazy">
       </div>
     </div>
@@ -148,7 +225,7 @@
       <li data-i18n="ons.adv2">Gratis plaatsbezoek en vrijblijvende offerte</li>
       <li data-i18n="ons.adv3">Offerte binnen 48 uur na bezoek</li>
       <li data-i18n="ons.adv4">Actief in heel Vlaanderen</li>
-      <li data-i18n="ons.adv5">Erkend aannemer &mdash; gecertificeerd vakman</li>
+      <li data-i18n="ons.adv5">Ervaren en vakbekwame aannemer</li>
       <li data-i18n="ons.adv6">Uitsluitend hoogwaardige, gecertificeerde materialen</li>
       <li data-i18n="ons.adv7">Transparante en eerlijke prijsvorming</li>
       <li data-i18n="ons.adv8">Persoonlijk contactpunt tijdens het project</li>
@@ -165,7 +242,7 @@
   <div class="si reveal">
     <h2 data-i18n="ons.cta.h2">Klaar om uw gevel of dak te laten vernieuwen?</h2>
     <p data-i18n="ons.cta.p">Neem vandaag nog contact op. Wij plannen een gratis plaatsbezoek en bezorgen u een transparante offerte zonder verplichtingen.</p>
-    <a href="/contact/" class="btn-primary" data-i18n="ons.cta.btn">Contact opnemen</a>
+    <a href="/contact/" class="btn-primary" data-i18n="ons.cta.btn">Plan gratis plaatsbezoek</a>
   </div>
 </section>
 
@@ -176,6 +253,7 @@
       <div class="footer-brand">
         <img src="/logo.svg" class="logo-img logo-white" alt="T.F.M. Construct BV" width="160" height="90" loading="lazy">
         <p data-i18n="footer.brand">T.F.M. Construct BV is uw specialist in gevel- en dakwerken in Vlaanderen. Kwaliteit, vakmanschap en garantie staan bij ons centraal.</p>
+        <p style="margin-top:1rem;font-size:.85rem;color:rgba(255,255,255,.55)">Bergensesteenweg 24/8, 1600 Sint-Pieters-Leeuw<br>BE 0800.172.103</p>
       </div>
       <div>
         <h4 data-i18n="footer.nav">Navigatie</h4>
@@ -185,17 +263,20 @@
           <a href="/diensten/" data-i18n="nav.diensten">Diensten</a>
           <a href="/projecten/" data-i18n="nav.projecten">Projecten</a>
           <a href="/contact/" data-i18n="nav.contact">Contact</a>
+          <a href="/privacybeleid/">Privacybeleid</a>
+          <a href="/cookiebeleid/">Cookiebeleid</a>
         </nav>
       </div>
       <div>
         <h4 data-i18n="footer.svc">Diensten</h4>
         <nav class="footer-links">
-          <a href="/diensten/#spuitkurk">Spuitkurk</a>
-          <a href="/diensten/#crepi">Crepi</a>
-          <a href="/diensten/#gevelisolatie">Gevelisolatie</a>
-          <a href="/diensten/#kaleien">Kaleien</a>
-          <a href="/diensten/#steenstrips">Steenstrips</a>
-          <a href="/diensten/#dakrenovatie">Dakrenovatie</a>
+          <a href="/diensten/spuitkurk/">Spuitkurk</a>
+          <a href="/diensten/crepi/">Crepi</a>
+          <a href="/diensten/gevelisolatie/">Gevelisolatie</a>
+          <a href="/diensten/kaleien/">Kaleien</a>
+          <a href="/diensten/steenstrips/">Steenstrips</a>
+          <a href="/diensten/dakrenovatie/">Dakrenovatie</a>
+          <a href="/diensten/dakisolatie/">Dakisolatie</a>
         </nav>
       </div>
     </div>

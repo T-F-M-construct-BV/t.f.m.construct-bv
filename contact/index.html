@@ -1,8 +1,61 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+  <!-- TFM Consent Mode v2 -->
+<script>
+(function () {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () {
+    window.dataLayer.push(arguments);
+  };
+
+  var saved = null;
+
+  try {
+    saved = JSON.parse(
+      localStorage.getItem('tfm_consent_v1')
+    );
+  } catch (e) {}
+
+  var analytics =
+    saved && saved.analytics === true
+      ? 'granted'
+      : 'denied';
+
+  var marketing =
+    saved && saved.marketing === true
+      ? 'granted'
+      : 'denied';
+
+  gtag('consent', 'default', {
+    analytics_storage: analytics,
+    ad_storage: marketing,
+    ad_user_data: marketing,
+    ad_personalization: marketing,
+    functionality_storage: 'granted',
+    security_storage: 'granted',
+    wait_for_update: 500
+  });
+
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+})();
+</script>
+<!-- End TFM Consent Mode v2 -->
+
+<!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WX4C8QT3');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <title>Contact — Gratis Offerte Aanvragen | T.F.M. Construct BV</title>
   <meta name="description" content="Neem contact op met T.F.M. Construct BV voor een gratis plaatsbezoek en offerte. Gevel- en dakwerken in heel Vlaanderen. Bereikbaar via telefoon, e-mail of WhatsApp.">
   <link rel="canonical" href="https://www.tfmconstruct.be/contact/">
@@ -27,12 +80,16 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type":"ListItem","position":1,"name":"Home","item":"https://www.tfmconstruct.be/"},
-      {"@type":"ListItem","position":2,"name":"Contact","item":"https://www.tfmconstruct.be/contact/"}
+      {"@type":"ListItem","position":2,"name":"Contact","item":"https://www.tfmconstruct.be/contact.html"}
     ]
   }
   </script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WX4C8QT3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- NAV -->
 <nav class="nav" role="navigation" aria-label="Hoofdnavigatie">
@@ -43,7 +100,18 @@
     <div class="nav-links">
       <a href="/" data-i18n="nav.home">Home</a>
       <a href="/over-ons/" data-i18n="nav.over">Over ons</a>
-      <a href="/diensten/" data-i18n="nav.diensten">Diensten</a>
+    <div class="nav-drop">
+      <a href="/diensten/" data-i18n="nav.diensten">Diensten<svg class="nav-drop-caret" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+      <div class="nav-drop-menu">
+        <a href="/diensten/gevelisolatie/">Gevelisolatie</a>
+        <a href="/diensten/crepi/">Crepi</a>
+        <a href="/diensten/spuitkurk/">Spuitkurk</a>
+        <a href="/diensten/steenstrips/">Steenstrips</a>
+        <a href="/diensten/kaleien/">Kaleien</a>
+        <a href="/diensten/dakrenovatie/">Dakrenovatie</a>
+        <a href="/diensten/dakisolatie/">Dakisolatie</a>
+      </div>
+    </div>
       <a href="/projecten/" data-i18n="nav.projecten">Projecten</a>
       <a href="/contact/" class="active" data-i18n="nav.contact">Contact</a>
     </div>
@@ -60,7 +128,16 @@
 <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobiel menu">
   <a href="/" data-i18n="nav.home">Home</a>
   <a href="/over-ons/" data-i18n="nav.over">Over ons</a>
-  <a href="/diensten/" data-i18n="nav.diensten">Diensten</a>
+  <div class="mobile-submenu">
+    <a href="/diensten/" data-i18n="nav.diensten" style="font-size:1.4rem!important;margin-bottom:.4rem">Diensten</a>
+    <a href="/diensten/gevelisolatie/">Gevelisolatie</a>
+    <a href="/diensten/crepi/">Crepi</a>
+    <a href="/diensten/spuitkurk/">Spuitkurk</a>
+    <a href="/diensten/steenstrips/">Steenstrips</a>
+    <a href="/diensten/kaleien/">Kaleien</a>
+    <a href="/diensten/dakrenovatie/">Dakrenovatie</a>
+    <a href="/diensten/dakisolatie/">Dakisolatie</a>
+  </div>
   <a href="/projecten/" data-i18n="nav.projecten">Projecten</a>
   <a href="/contact/" class="active" data-i18n="nav.contact">Contact</a>
   <a href="/contact/" class="btn-primary" data-i18n="nav.cta">Offerte aanvragen</a>
@@ -91,14 +168,13 @@
     <div class="contact-grid" style="margin-top:3rem;align-items:start">
       <!-- FORM -->
       <div class="reveal">
-        <form class="contact-form" novalidate>
+        <form class="contact-form" action="https://formspree.io/f/xoeqkoon" method="POST">
+          <input type="hidden" name="_subject" value="Nieuwe offerteaanvraag — T.F.M. Construct website">
+          <input type="hidden" name="_next" value="https://www.tfmconstruct.be/bedankt/">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-group">
             <label for="naam" data-i18n="cnt.naam">Naam *</label>
             <input type="text" id="naam" name="naam" placeholder="Jan Janssen" data-i18n-ph="cnt.ph.naam" required autocomplete="name">
-          </div>
-          <div class="form-group">
-            <label for="bedrijf" data-i18n="cnt.bedrijf">Bedrijfsnaam <span style="font-weight:400;text-transform:none;font-family:Inter,sans-serif;font-size:.8rem;color:#888">(optioneel)</span></label>
-            <input type="text" id="bedrijf" name="bedrijf" placeholder="Uw bedrijf BV" data-i18n-ph="cnt.ph.bedrijf" autocomplete="organization">
           </div>
           <div class="form-group">
             <label for="tel" data-i18n="cnt.tel">Telefoonnummer *</label>
@@ -109,26 +185,30 @@
             <input type="email" id="email" name="email" placeholder="jan@email.be" required autocomplete="email">
           </div>
           <div class="form-group">
-            <label for="dienst" data-i18n="cnt.dienst">Gewenste dienst</label>
-            <select id="dienst" name="dienst">
+            <label for="postcode" data-i18n="cnt.postcode">Postcode *</label>
+            <input type="text" id="postcode" name="postcode" placeholder="1600" pattern="[0-9]{4}" inputmode="numeric" maxlength="4" required autocomplete="postal-code">
+          </div>
+          <div class="form-group">
+            <label for="dienst" data-i18n="cnt.dienst">Gewenste dienst *</label>
+            <select id="dienst" name="dienst" required>
               <option value="" disabled selected data-i18n-opt="cnt.dienst.select">Selecteer een dienst</option>
-              <option value="spuitkurk">Spuitkurk</option>
-              <option value="crepi">Crepi</option>
-              <option value="gevelisolatie">Gevelisolatie</option>
-              <option value="kaleien">Kaleien</option>
-              <option value="steenstrips">Steenstrips</option>
-              <option value="dakrenovatie">Dakrenovatie</option>
-              <option value="dakisolatie">Dakisolatie</option>
-              <option value="combinatie" data-i18n-opt="cnt.dienst.combo">Combinatie van diensten</option>
-              <option value="advies" data-i18n-opt="cnt.dienst.advies">Advies / Ik weet het nog niet</option>
+              <option value="Gevelisolatie">Gevelisolatie</option>
+              <option value="Crepi">Crepi</option>
+              <option value="Spuitkurk">Spuitkurk</option>
+              <option value="Steenstrips">Steenstrips</option>
+              <option value="Kaleien">Kaleien</option>
+              <option value="Dakrenovatie">Dakrenovatie</option>
+              <option value="Dakisolatie">Dakisolatie</option>
+              <option value="Andere werken" data-i18n-opt="cnt.dienst.andere">Andere werken</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="bericht" data-i18n="cnt.bericht">Bericht *</label>
-            <textarea id="bericht" name="bericht" rows="5" placeholder="Beschrijf uw project, adres, gewenste timing..." data-i18n-ph="cnt.ph.bericht" required></textarea>
+            <label for="bericht" data-i18n="cnt.bericht">Bericht <span style="font-weight:400;text-transform:none;font-family:Inter,sans-serif;font-size:.8rem;color:#888">(optioneel)</span></label>
+            <textarea id="bericht" name="bericht" rows="5" placeholder="Beschrijf uw project, adres, gewenste timing..." data-i18n-ph="cnt.ph.bericht"></textarea>
+            <p style="font-size:.8rem;color:#888;margin-top:.4rem" data-i18n="cnt.foto.tip">Foto&#39;s van uw gevel of dak? Stuur die makkelijk mee via <a href="https://wa.me/32471916136" target="_blank" rel="noopener" style="color:var(--navy);font-weight:600">WhatsApp</a>.</p>
           </div>
-          <button type="submit" class="btn-primary form-submit" data-i18n="cnt.submit">Verstuur aanvraag</button>
-          <p class="form-note" data-i18n="cnt.note">Wij antwoorden binnen 24 uur. Uw gegevens worden strikt vertrouwelijk behandeld en nooit gedeeld met derden.</p>
+          <button type="submit" class="btn-primary form-submit" data-i18n="cnt.submit">Vraag gratis plaatsbezoek aan</button>
+          <p class="form-note" data-i18n="cnt.note">Uw gegevens worden strikt vertrouwelijk behandeld en nooit gedeeld met derden.</p>
         </form>
       </div>
 
@@ -151,7 +231,7 @@
           <div>
             <h4 data-i18n="cnt.email.label">E-mail</h4>
             <a href="mailto:t.f.m.construkt@gmail.com">t.f.m.construkt@gmail.com</a>
-            <p style="font-size:.82rem;color:#888;margin-top:.2rem" data-i18n="cnt.email.sub">Antwoord binnen 24 uur</p>
+            <p style="font-size:.82rem;color:#888;margin-top:.2rem" data-i18n="cnt.email.sub">Wij nemen zo snel mogelijk contact op</p>
           </div>
         </div>
         <div class="info-card">
@@ -216,6 +296,7 @@
       <div class="footer-brand">
         <img src="/logo.svg" class="logo-img logo-white" alt="T.F.M. Construct BV" width="160" height="90" loading="lazy">
         <p data-i18n="footer.brand">T.F.M. Construct BV is uw specialist in gevel- en dakwerken in Vlaanderen. Kwaliteit, vakmanschap en garantie staan bij ons centraal.</p>
+        <p style="margin-top:1rem;font-size:.85rem;color:rgba(255,255,255,.55)">Bergensesteenweg 24/8, 1600 Sint-Pieters-Leeuw<br>BE 0800.172.103</p>
       </div>
       <div>
         <h4 data-i18n="footer.nav">Navigatie</h4>
@@ -225,17 +306,20 @@
           <a href="/diensten/" data-i18n="nav.diensten">Diensten</a>
           <a href="/projecten/" data-i18n="nav.projecten">Projecten</a>
           <a href="/contact/" data-i18n="nav.contact">Contact</a>
+          <a href="/privacybeleid/">Privacybeleid</a>
+          <a href="/cookiebeleid/">Cookiebeleid</a>
         </nav>
       </div>
       <div>
         <h4 data-i18n="footer.svc">Diensten</h4>
         <nav class="footer-links">
-          <a href="/diensten/#spuitkurk">Spuitkurk</a>
-          <a href="/diensten/#crepi">Crepi</a>
-          <a href="/diensten/#gevelisolatie">Gevelisolatie</a>
-          <a href="/diensten/#kaleien">Kaleien</a>
-          <a href="/diensten/#steenstrips">Steenstrips</a>
-          <a href="/diensten/#dakrenovatie">Dakrenovatie</a>
+          <a href="/diensten/spuitkurk/">Spuitkurk</a>
+          <a href="/diensten/crepi/">Crepi</a>
+          <a href="/diensten/gevelisolatie/">Gevelisolatie</a>
+          <a href="/diensten/kaleien/">Kaleien</a>
+          <a href="/diensten/steenstrips/">Steenstrips</a>
+          <a href="/diensten/dakrenovatie/">Dakrenovatie</a>
+          <a href="/diensten/dakisolatie/">Dakisolatie</a>
         </nav>
       </div>
     </div>

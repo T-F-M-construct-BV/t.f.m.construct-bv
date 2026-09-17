@@ -1,8 +1,61 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+  <!-- TFM Consent Mode v2 -->
+<script>
+(function () {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () {
+    window.dataLayer.push(arguments);
+  };
+
+  var saved = null;
+
+  try {
+    saved = JSON.parse(
+      localStorage.getItem('tfm_consent_v1')
+    );
+  } catch (e) {}
+
+  var analytics =
+    saved && saved.analytics === true
+      ? 'granted'
+      : 'denied';
+
+  var marketing =
+    saved && saved.marketing === true
+      ? 'granted'
+      : 'denied';
+
+  gtag('consent', 'default', {
+    analytics_storage: analytics,
+    ad_storage: marketing,
+    ad_user_data: marketing,
+    ad_personalization: marketing,
+    functionality_storage: 'granted',
+    security_storage: 'granted',
+    wait_for_update: 500
+  });
+
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+})();
+</script>
+<!-- End TFM Consent Mode v2 -->
+
+<!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WX4C8QT3');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <title>Projecten — Voor &amp; Na Galerij | T.F.M. Construct BV</title>
   <meta name="description" content="Bekijk de voor- en nafoto's van T.F.M. Construct BV projecten in Vlaanderen. Gevelrenovaties, spuitkurk, crepi, dakrenovaties en dakisolatie met spectaculaire resultaten.">
   <link rel="canonical" href="https://www.tfmconstruct.be/projecten/">
@@ -17,7 +70,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/style.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tfmconstruct.be/"},{"@type":"ListItem","position":2,"name":"Projecten","item":"https://www.tfmconstruct.be/projecten/"}]}
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tfmconstruct.be/"},{"@type":"ListItem","position":2,"name":"Projecten","item":"https://www.tfmconstruct.be/projecten.html"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Nieuwbouw — gevelisolatie met crepi afwerking","url":"https://www.tfmconstruct.be/projecten.html#crepi"},
+    {"@type":"ListItem","position":2,"name":"Vrijstaande woning — gevelisolatie met steenstrips afwerking","url":"https://www.tfmconstruct.be/projecten.html#steenstrips"},
+    {"@type":"ListItem","position":3,"name":"Residentiële woning — vernieuwde gevel met kaleien","url":"https://www.tfmconstruct.be/projecten.html#kaleien"},
+    {"@type":"ListItem","position":4,"name":"Residentiële woning — gevelrenovatie met spuitkurk","url":"https://www.tfmconstruct.be/projecten.html#spuitkurk"}
+  ]}
   </script>
 
   <style>
@@ -50,7 +111,8 @@
     .lbl-na   { background:rgba(232,165,0,.9);  color:var(--navy); }
 
     /* Expand toggle */
-    .pcard-toggle { display:flex; align-items:center; justify-content:flex-end; padding:16px 28px; border-top:1px solid rgba(5,40,76,.06); }
+    .pcard-toggle { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; padding:16px 28px; border-top:1px solid rgba(5,40,76,.06); }
+    .pcard-svc-link { font-family:'Barlow Condensed',sans-serif; font-size:.85rem; font-weight:700; color:var(--navy); text-decoration:underline; }
     .pcard-toggle-btn { display:inline-flex; align-items:center; gap:8px; font-family:'Barlow Condensed',sans-serif; font-size:.78rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--navy); cursor:pointer; background:none; border:1px solid rgba(5,40,76,.18); border-radius:4px; padding:.45rem 1rem; transition:background .2s, color .2s, border-color .2s; }
     .pcard-toggle-btn:hover { background:var(--navy); color:#fff; border-color:var(--navy); }
     .pcard-toggle-btn svg { width:14px; height:14px; flex-shrink:0; transition:transform .3s ease; }
@@ -77,6 +139,10 @@
   </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WX4C8QT3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- NAV -->
 <nav class="nav" role="navigation" aria-label="Hoofdnavigatie">
@@ -87,7 +153,18 @@
     <div class="nav-links">
       <a href="/" data-i18n="nav.home">Home</a>
       <a href="/over-ons/" data-i18n="nav.over">Over ons</a>
-      <a href="/diensten/" data-i18n="nav.diensten">Diensten</a>
+    <div class="nav-drop">
+      <a href="/diensten/" data-i18n="nav.diensten">Diensten<svg class="nav-drop-caret" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+      <div class="nav-drop-menu">
+        <a href="/diensten/gevelisolatie/">Gevelisolatie</a>
+        <a href="/diensten/crepi/">Crepi</a>
+        <a href="/diensten/spuitkurk/">Spuitkurk</a>
+        <a href="/diensten/steenstrips/">Steenstrips</a>
+        <a href="/diensten/kaleien/">Kaleien</a>
+        <a href="/diensten/dakrenovatie/">Dakrenovatie</a>
+        <a href="/diensten/dakisolatie/">Dakisolatie</a>
+      </div>
+    </div>
       <a href="/projecten/" class="active" data-i18n="nav.projecten">Projecten</a>
       <a href="/contact/" data-i18n="nav.contact">Contact</a>
     </div>
@@ -104,7 +181,16 @@
 <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobiel menu">
   <a href="/" data-i18n="nav.home">Home</a>
   <a href="/over-ons/" data-i18n="nav.over">Over ons</a>
-  <a href="/diensten/" data-i18n="nav.diensten">Diensten</a>
+  <div class="mobile-submenu">
+    <a href="/diensten/" data-i18n="nav.diensten" style="font-size:1.4rem!important;margin-bottom:.4rem">Diensten</a>
+    <a href="/diensten/gevelisolatie/">Gevelisolatie</a>
+    <a href="/diensten/crepi/">Crepi</a>
+    <a href="/diensten/spuitkurk/">Spuitkurk</a>
+    <a href="/diensten/steenstrips/">Steenstrips</a>
+    <a href="/diensten/kaleien/">Kaleien</a>
+    <a href="/diensten/dakrenovatie/">Dakrenovatie</a>
+    <a href="/diensten/dakisolatie/">Dakisolatie</a>
+  </div>
   <a href="/projecten/" class="active">Projecten</a>
   <a href="/contact/" data-i18n="nav.contact">Contact</a>
   <a href="/contact/" class="btn-primary" data-i18n="nav.cta">Offerte aanvragen</a>
@@ -165,35 +251,35 @@
       </div>
       <div class="pcard-photos">
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/crepi_voor.jpeg"
+          <img src="/crepi_voor.jpeg"
                alt="Gevel voor crepi" width="720" height="540" loading="lazy">
           <span class="pcard-photo-label lbl-voor" data-i18n="prj.voor">Voor</span>
         </div>
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/crepi_na.png"
+          <img src="/crepi_na.png"
                alt="Gevel na crepi" width="720" height="540" loading="lazy">
           <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
         </div>
       </div>
-      <div class="pcard-toggle"><button class="pcard-toggle-btn" aria-expanded="false"data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-toggle"><a href="/diensten/crepi/" class="pcard-svc-link">Bekijk de dienst: Crepi &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false" data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="pcard-extra">
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/isolatie_.jpeg"
+          <img src="/isolatie_.jpeg"
                alt="Isolatieplaten aanbreng" width="480" height="320" loading="lazy">
         </div>
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/crepi_tijdens.jpeg"
+          <img src="/crepi_tijdens.jpeg"
                alt="Crepi aanbreng in uitvoering" width="480" height="320" loading="lazy">
         </div>
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/crepi_tijdens_na.jpeg"
+          <img src="/crepi_tijdens_na.jpeg"
                alt="Crepi bijna afgewerkt" width="480" height="320" loading="lazy">
         </div>
       </div>
     </article>
 
     <!-- 02 STEENSTRIPS -->
-    <article class="pcard reveal" style="transition-delay:.08s">
+    <article class="pcard reveal" id="steenstrips" style="transition-delay:.08s">
       <div class="pcard-meta">
         <span class="pcard-num">02</span>
         <span class="pcard-type" data-i18n="prj.02.type">Steenstrips</span>
@@ -220,35 +306,35 @@
       </div>
       <div class="pcard-photos">
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/steenstrips_voor.JPG"
+          <img src="/steenstrips_voor.JPG"
                alt="Gevel voor steenstrips" width="720" height="540" loading="lazy">
           <span class="pcard-photo-label lbl-voor" data-i18n="prj.voor">Voor</span>
         </div>
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/steenstrips_na2.JPG"
+          <img src="/steenstrips_na2.JPG"
                alt="Gevel na steenstrips" width="720" height="540" loading="lazy">
           <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
         </div>
       </div>
-      <div class="pcard-toggle"><button class="pcard-toggle-btn" aria-expanded="false"data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-toggle"><a href="/diensten/steenstrips/" class="pcard-svc-link">Bekijk de dienst: Steenstrips &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false" data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="pcard-extra">
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/steenstrips_op_het_werk.JPG"
+          <img src="/steenstrips_op_het_werk.JPG"
                alt="Steenstrips plaatsing" width="480" height="320" loading="lazy">
         </div>
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/steenstrips_na_hoek.JPG"
+          <img src="/steenstrips_na_hoek.JPG"
                alt="Hoekdetail na" width="480" height="320" loading="lazy">
         </div>
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/steenstrips_na_kant.JPG"
+          <img src="/steenstrips_na_kant.JPG"
                alt="Zijkant na" width="480" height="320" loading="lazy">
         </div>
       </div>
     </article>
 
     <!-- 03 KALEIEN -->
-    <article class="pcard reveal" style="transition-delay:.12s">
+    <article class="pcard reveal" id="kaleien" style="transition-delay:.12s">
       <div class="pcard-meta">
         <span class="pcard-num">03</span>
         <span class="pcard-type" data-i18n="prj.03.type">Kaleien</span>
@@ -275,35 +361,35 @@
       </div>
       <div class="pcard-photos">
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/kaleien_voor.jpeg"
+          <img src="/kaleien_voor.jpeg"
                alt="Gevel voor kaleien" width="720" height="540" loading="lazy">
           <span class="pcard-photo-label lbl-voor" data-i18n="prj.voor">Voor</span>
         </div>
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/kaleien_na.png"
+          <img src="/kaleien_na.png"
                alt="Gevel na kaleien" width="720" height="540" loading="lazy">
           <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
         </div>
       </div>
-      <div class="pcard-toggle"><button class="pcard-toggle-btn" aria-expanded="false"data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-toggle"><a href="/diensten/kaleien/" class="pcard-svc-link">Bekijk de dienst: Kaleien &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false" data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="pcard-extra">
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/kaleien_op_het_werk.png"
+          <img src="/kaleien_op_het_werk.png"
                alt="Kaleien in uitvoering" width="480" height="320" loading="lazy">
         </div>
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/kaleien_voor2.jpeg"
+          <img src="/kaleien_voor2.jpeg"
                alt="Detail voor" width="480" height="320" loading="lazy">
         </div>
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/kaleien_na1.png"
+          <img src="/kaleien_na1.png"
                alt="Detail na" width="480" height="320" loading="lazy">
         </div>
       </div>
     </article>
 
     <!-- 04 SPUITKURK -->
-    <article class="pcard reveal" style="transition-delay:.16s">
+    <article class="pcard reveal" id="spuitkurk" style="transition-delay:.16s">
       <div class="pcard-meta">
         <span class="pcard-num">04</span>
         <span class="pcard-type" data-i18n="prj.04.type">Spuitkurk</span>
@@ -330,28 +416,28 @@
       </div>
       <div class="pcard-photos">
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/spuitkurk_voor_zwart.jpg.png"
+          <img src="/spuitkurk_voor_zwart.jpg.png"
                alt="Gevel voor spuitkurk" width="720" height="540" loading="lazy">
           <span class="pcard-photo-label lbl-voor" data-i18n="prj.voor">Voor</span>
         </div>
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/spuitkurk_na_zwart.jpg.png"
+          <img src="/spuitkurk_na_zwart.jpg.png"
                alt="Gevel na spuitkurk" width="720" height="540" loading="lazy">
           <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
         </div>
       </div>
-      <div class="pcard-toggle"><button class="pcard-toggle-btn" aria-expanded="false"data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-toggle"><a href="/diensten/spuitkurk/" class="pcard-svc-link">Bekijk de dienst: Spuitkurk &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false" data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="pcard-extra">
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/spuitkurk_tijdens_zwart.png"
+          <img src="/spuitkurk_tijdens_zwart.png"
                alt="Spuitkurk uitvoering" width="480" height="320" loading="lazy">
         </div>
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/spuitkurk_reiningen.png"
+          <img src="/spuitkurk_reiningen.png"
                alt="Reiniging gevel" width="480" height="320" loading="lazy">
         </div>
         <div class="pcard-photo" data-lb>
-          <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/spuitkurk_sprei.png"
+          <img src="/spuitkurk_sprei.png"
                alt="Spuitkurk aanbreng" width="480" height="320" loading="lazy">
         </div>
       </div>
@@ -376,6 +462,7 @@
       <div class="footer-brand">
         <img src="/logo.svg" class="logo-img logo-white" alt="T.F.M. Construct BV" width="160" height="90" loading="lazy">
         <p data-i18n="footer.brand">T.F.M. Construct BV is uw specialist in gevel- en dakwerken in Vlaanderen. Kwaliteit, vakmanschap en garantie staan bij ons centraal.</p>
+        <p style="margin-top:1rem;font-size:.85rem;color:rgba(255,255,255,.55)">Bergensesteenweg 24/8, 1600 Sint-Pieters-Leeuw<br>BE 0800.172.103</p>
       </div>
       <div>
         <h4 data-i18n="footer.nav">Navigatie</h4>
@@ -385,17 +472,20 @@
           <a href="/diensten/" data-i18n="nav.diensten">Diensten</a>
           <a href="/projecten/" data-i18n="nav.projecten">Projecten</a>
           <a href="/contact/" data-i18n="nav.contact">Contact</a>
+          <a href="/privacybeleid/">Privacybeleid</a>
+          <a href="/cookiebeleid/">Cookiebeleid</a>
         </nav>
       </div>
       <div>
         <h4 data-i18n="footer.svc">Diensten</h4>
         <nav class="footer-links">
-          <a href="/diensten/#spuitkurk">Spuitkurk</a>
-          <a href="/diensten/#crepi">Crepi</a>
-          <a href="/diensten/#gevelisolatie">Gevelisolatie</a>
-          <a href="/diensten/#kaleien">Kaleien</a>
-          <a href="/diensten/#steenstrips">Steenstrips</a>
-          <a href="/diensten/#dakrenovatie">Dakrenovatie</a>
+          <a href="/diensten/spuitkurk/">Spuitkurk</a>
+          <a href="/diensten/crepi/">Crepi</a>
+          <a href="/diensten/gevelisolatie/">Gevelisolatie</a>
+          <a href="/diensten/kaleien/">Kaleien</a>
+          <a href="/diensten/steenstrips/">Steenstrips</a>
+          <a href="/diensten/dakrenovatie/">Dakrenovatie</a>
+          <a href="/diensten/dakisolatie/">Dakisolatie</a>
         </nav>
       </div>
     </div>

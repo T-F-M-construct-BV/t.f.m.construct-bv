@@ -1,15 +1,61 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
+  <!-- TFM Consent Mode v2 -->
+<script>
+(function () {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () {
+    window.dataLayer.push(arguments);
+  };
+
+  var saved = null;
+
+  try {
+    saved = JSON.parse(
+      localStorage.getItem('tfm_consent_v1')
+    );
+  } catch (e) {}
+
+  var analytics =
+    saved && saved.analytics === true
+      ? 'granted'
+      : 'denied';
+
+  var marketing =
+    saved && saved.marketing === true
+      ? 'granted'
+      : 'denied';
+
+  gtag('consent', 'default', {
+    analytics_storage: analytics,
+    ad_storage: marketing,
+    ad_user_data: marketing,
+    ad_personalization: marketing,
+    functionality_storage: 'granted',
+    security_storage: 'granted',
+    wait_for_update: 500
+  });
+
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+})();
+</script>
+<!-- End TFM Consent Mode v2 -->
+
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WX4C8QT3');</script>
-<!-- End Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WX4C8QT3');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <title>T.F.M. Construct BV — Gevel- en Dakwerken in Vlaanderen | Spuitkurk, Crepi, Dakrenovatie</title>
   <meta name="description" content="T.F.M. Construct BV is uw specialist in gevel- en dakwerken in Vlaanderen. Spuitkurk, crepi, gevelisolatie, dakrenovatie en dakisolatie met 10 jaar garantie. Gratis plaatsbezoek.">
   <link rel="canonical" href="https://www.tfmconstruct.be/">
@@ -18,7 +64,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:type" content="website">
   <meta property="og:title" content="T.F.M. Construct BV — Gevelwerken in Vlaanderen">
   <meta property="og:description" content="Specialist in gevel- en dakwerken: spuitkurk, crepi, gevelisolatie, dakrenovatie en dakisolatie. Actief in heel Vlaanderen. Gratis plaatsbezoek en offerte binnen 48u.">
-  <meta property="og:image" content="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/ChatGPT%20Image%20Jun%204%2C%202026%20at%2012_41_10%20AM.png">
+  <meta property="og:image" content="https://www.tfmconstruct.be/crepi_na.png">
   <meta property="og:url" content="https://www.tfmconstruct.be/">
 
   <!-- Geo -->
@@ -27,7 +73,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="ICBM" content="51.0,4.0">
 
   <!-- Preload hero -->
-  <link rel="preload" as="image" href="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/ChatGPT%20Image%20Jun%204%2C%202026%20at%2012_41_10%20AM.png">
+  <link rel="preload" as="image" href="/crepi_na.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -41,10 +87,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "name": "T.F.M. Construct BV",
     "description": "Specialist in gevel- en dakwerken: spuitkurk, crepi, gevelisolatie, kaleien, steenstrips, dakrenovatie en dakisolatie. Actief in heel Vlaanderen.",
     "url": "https://www.tfmconstruct.be",
+    "logo": "https://www.tfmconstruct.be/apple-touch-icon.png",
     "telephone": "+32471916136",
     "email": "t.f.m.construkt@gmail.com",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Bergensesteenweg 24/8",
+      "postalCode": "1600",
+      "addressLocality": "Sint-Pieters-Leeuw",
       "addressRegion": "Vlaanderen",
       "addressCountry": "BE"
     },
@@ -80,7 +130,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="nav-links">
       <a href="/" class="active" data-i18n="nav.home">Home</a>
       <a href="/over-ons/" data-i18n="nav.over">Over ons</a>
-      <a href="/diensten/" data-i18n="nav.diensten">Diensten</a>
+    <div class="nav-drop">
+      <a href="/diensten/" data-i18n="nav.diensten">Diensten<svg class="nav-drop-caret" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+      <div class="nav-drop-menu">
+        <a href="/diensten/gevelisolatie/">Gevelisolatie</a>
+        <a href="/diensten/crepi/">Crepi</a>
+        <a href="/diensten/spuitkurk/">Spuitkurk</a>
+        <a href="/diensten/steenstrips/">Steenstrips</a>
+        <a href="/diensten/kaleien/">Kaleien</a>
+        <a href="/diensten/dakrenovatie/">Dakrenovatie</a>
+        <a href="/diensten/dakisolatie/">Dakisolatie</a>
+      </div>
+    </div>
       <a href="/projecten/" data-i18n="nav.projecten">Projecten</a>
       <a href="/contact/" data-i18n="nav.contact">Contact</a>
     </div>
@@ -99,7 +160,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobiel menu">
   <a href="/" class="active" data-i18n="nav.home">Home</a>
   <a href="/over-ons/" data-i18n="nav.over">Over ons</a>
-  <a href="/diensten/" data-i18n="nav.diensten">Diensten</a>
+  <div class="mobile-submenu">
+    <a href="/diensten/" data-i18n="nav.diensten" style="font-size:1.4rem!important;margin-bottom:.4rem">Diensten</a>
+    <a href="/diensten/gevelisolatie/">Gevelisolatie</a>
+    <a href="/diensten/crepi/">Crepi</a>
+    <a href="/diensten/spuitkurk/">Spuitkurk</a>
+    <a href="/diensten/steenstrips/">Steenstrips</a>
+    <a href="/diensten/kaleien/">Kaleien</a>
+    <a href="/diensten/dakrenovatie/">Dakrenovatie</a>
+    <a href="/diensten/dakisolatie/">Dakisolatie</a>
+  </div>
   <a href="/projecten/" data-i18n="nav.projecten">Projecten</a>
   <a href="/contact/" data-i18n="nav.contact">Contact</a>
   <a href="/contact/" class="btn-primary" data-i18n="nav.cta">Offerte aanvragen</a>
@@ -107,28 +177,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="top">
-  <div class="hero-bg" style="background-image:url('https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/crepi_na.png')"></div>
+  <div class="hero-bg" style="background-image:url('/crepi_na.png')"></div>
   <div class="hero-overlay"></div>
   <div class="si hero-content">
     <p class="hero-label" data-i18n="idx.hero.label">T.F.M. Construct BV — Gevel- &amp; Dakspecialist in Vlaanderen</p>
-    <h1 data-i18n="idx.hero.h1">Uw gevel en dak in vakkundige handen</h1>
-    <p class="hero-sub" data-i18n="idx.hero.sub">Van spuitkurk tot dakrenovatie — wij leveren totaaloplossingen voor gevel en dak, voor particulieren en bedrijven in heel Vlaanderen.</p>
+    <h1 data-i18n="idx.hero.h1">Gevelrenovatie &amp; dakwerken in Vlaanderen</h1>
+    <p class="hero-sub" data-i18n="idx.hero.sub">Van gevelisolatie en crepi tot dakisolatie en volledige dakrenovatie. E&eacute;n ervaren team voor advies, uitvoering en afwerking.</p>
     <div class="hero-btns">
-      <a href="/contact/" class="btn-primary" data-i18n="idx.hero.btn1">Gratis offerte aanvragen</a>
-      <a href="/projecten/" class="btn-outline" data-i18n="idx.hero.btn2">Onze projecten bekijken</a>
+      <a href="/contact/" class="btn-primary" data-i18n="idx.hero.btn1">Plan gratis plaatsbezoek</a>
+      <a href="/projecten/" class="btn-outline" data-i18n="idx.hero.btn2">Bekijk onze projecten</a>
     </div>
     <div class="stats">
       <div class="stat-card">
-        <div class="stat-num">10j</div>
-        <div class="stat-txt" data-i18n="stat.garantie">Garantie</div>
+        <div class="stat-num">Gratis</div>
+        <div class="stat-txt" data-i18n="stat.plaatsbezoek">Plaatsbezoek</div>
       </div>
       <div class="stat-card">
         <div class="stat-num">48u</div>
         <div class="stat-txt" data-i18n="stat.offerte">Offerte</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">Gratis</div>
-        <div class="stat-txt" data-i18n="stat.plaatsbezoek">Plaatsbezoek</div>
+        <div class="stat-num">10j</div>
+        <div class="stat-txt" data-i18n="stat.garantie">Garantie</div>
       </div>
     </div>
   </div>
@@ -154,9 +224,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="group-count" data-i18n="idx.gevel.count">5 diensten</span>
       </div>
       <div class="services-grid">
-        <a href="/diensten/#gevelisolatie" class="service-card reveal" style="transition-delay:.05s">
+        <a href="/diensten/gevelisolatie/" class="service-card reveal" style="transition-delay:.05s">
           <div class="service-card-img" data-lb>
-            <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/isolatie%20plasteren.png" alt="Gevelisolatie buitengevel" width="300" height="220" loading="lazy">
+            <img src="/isolatie plasteren.png" alt="Gevelisolatie buitengevel" width="300" height="220" loading="lazy">
           </div>
           <div class="service-card-body">
             <h3 data-i18n="svc.gevelisolatie">Gevelisolatie</h3>
@@ -164,9 +234,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="service-card-link" data-i18n="idx.svc.more">Meer info &rarr;</span>
           </div>
         </a>
-        <a href="/diensten/#spuitkurk" class="service-card reveal" style="transition-delay:.1s">
+        <a href="/diensten/spuitkurk/" class="service-card reveal" style="transition-delay:.1s">
           <div class="service-card-img" data-lb>
-            <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/spuitkurk6jpg.jpg" alt="Spuitkurk gevelafwerking" width="300" height="220" loading="lazy">
+            <img src="/spuitkurk6jpg.jpg" alt="Spuitkurk gevelafwerking" width="300" height="220" loading="lazy">
           </div>
           <div class="service-card-body">
             <h3 data-i18n="svc.spuitkurk">Spuitkurk</h3>
@@ -174,9 +244,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="service-card-link" data-i18n="idx.svc.more">Meer info &rarr;</span>
           </div>
         </a>
-        <a href="/diensten/#crepi" class="service-card reveal" style="transition-delay:.15s">
+        <a href="/diensten/crepi/" class="service-card reveal" style="transition-delay:.15s">
           <div class="service-card-img" data-lb>
-            <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/crepi%20diesten.png" alt="Crepi gevelbepleistering" width="300" height="220" loading="lazy">
+            <img src="/crepi diesten.png" alt="Crepi gevelbepleistering" width="300" height="220" loading="lazy">
           </div>
           <div class="service-card-body">
             <h3 data-i18n="svc.crepi">Crepi</h3>
@@ -184,9 +254,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="service-card-link" data-i18n="idx.svc.more">Meer info &rarr;</span>
           </div>
         </a>
-        <a href="/diensten/#steenstrips" class="service-card reveal" style="transition-delay:.2s">
+        <a href="/diensten/steenstrips/" class="service-card reveal" style="transition-delay:.2s">
           <div class="service-card-img" data-lb>
-            <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/steenstrips_proses.jpg.png" alt="Steenstrips gevelafwerking" width="300" height="220" loading="lazy">
+            <img src="/steenstrips_proses.jpg.png" alt="Steenstrips gevelafwerking" width="300" height="220" loading="lazy">
           </div>
           <div class="service-card-body">
             <h3 data-i18n="svc.steenstrips">Steenstrips</h3>
@@ -194,9 +264,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="service-card-link" data-i18n="idx.svc.more">Meer info &rarr;</span>
           </div>
         </a>
-        <a href="/diensten/#kaleien" class="service-card reveal" style="transition-delay:.25s">
+        <a href="/diensten/kaleien/" class="service-card reveal" style="transition-delay:.25s">
           <div class="service-card-img" data-lb>
-            <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/kaleien_na.png" alt="Kaleien historische gevels" width="300" height="220" loading="lazy">
+            <img src="/kaleien_na.png" alt="Kaleien historische gevels" width="300" height="220" loading="lazy">
           </div>
           <div class="service-card-body">
             <h3 data-i18n="svc.kaleien">Kaleien</h3>
@@ -217,9 +287,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="group-count" data-i18n="idx.dak.count">2 diensten</span>
       </div>
       <div class="services-grid two-col">
-        <a href="/diensten/#dakrenovatie" class="service-card reveal" style="transition-delay:.05s">
+        <a href="/diensten/dakrenovatie/" class="service-card reveal" style="transition-delay:.05s">
           <div class="service-card-img" data-lb>
-            <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/dakrenovatie.jpg" alt="Dakrenovatie" width="300" height="220" loading="lazy">
+            <img src="/dakrenovatie.jpg" alt="Dakrenovatie" width="300" height="220" loading="lazy">
           </div>
           <div class="service-card-body">
             <h3 data-i18n="svc.dakrenovatie">Dakrenovatie</h3>
@@ -227,9 +297,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="service-card-link" data-i18n="idx.svc.more">Meer info &rarr;</span>
           </div>
         </a>
-        <a href="/diensten/#dakisolatie" class="service-card reveal" style="transition-delay:.1s">
+        <a href="/diensten/dakisolatie/" class="service-card reveal" style="transition-delay:.1s">
           <div class="service-card-img" data-lb>
-            <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/dakisolatie.jpg" alt="Dakisolatie" width="300" height="220" loading="lazy">
+            <img src="/dakisolatie.jpg" alt="Dakisolatie" width="300" height="220" loading="lazy">
           </div>
           <div class="service-card-body">
             <h3 data-i18n="svc.dakisolatie">Dakisolatie</h3>
@@ -256,7 +326,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="gold-line left"></div>
         <p data-i18n="idx.map.p1">Van kust tot Kempen &mdash; wij komen naar u toe. T.F.M. Construct BV is actief in alle vijf de Vlaamse provincies en voert opdrachten uit bij particulieren, bedrijven en overheden.</p>
         <p style="margin-top:1rem" data-i18n="idx.map.p2">Of u nu in Gent, Antwerpen, Brugge, Hasselt of Leuven woont &mdash; onze vakbekwame teams staan voor u klaar voor een gratis plaatsbezoek en vrijblijvende offerte.</p>
-        <a href="/contact/" class="btn-primary" style="margin-top:1.5rem;display:inline-flex" data-i18n="idx.map.btn">Gratis plaatsbezoek aanvragen</a>
+        <a href="/contact/" class="btn-primary" style="margin-top:1.5rem;display:inline-flex" data-i18n="idx.map.btn">Plan gratis plaatsbezoek</a>
       </div>
       <div class="map-svg-wrap reveal-r" style="position:relative">
         <div class="map-inner-wrap">
@@ -313,6 +383,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ===== TRUST ===== -->
+<section class="trust-section">
+  <div class="si">
+    <div class="section-center reveal">
+      <p class="section-label">Waarom T.F.M. Construct BV</p>
+      <h2 class="section-title">Zekerheid tijdens uw project</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-badge reveal">
+        <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+        <div class="trust-badge-txt"><h4>10 jaar garantie</h4><p>Op al onze gevel- en dakwerken.</p></div>
+      </div>
+      <div class="trust-badge reveal" style="transition-delay:.05s">
+        <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <div class="trust-badge-txt"><h4>Gratis plaatsbezoek</h4><p>Vrijblijvend advies ter plaatse.</p></div>
+      </div>
+      <div class="trust-badge reveal" style="transition-delay:.1s">
+        <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+        <div class="trust-badge-txt"><h4>Offerte binnen 48u</h4><p>Transparant, zonder verrassingen.</p></div>
+      </div>
+      <div class="trust-badge reveal" style="transition-delay:.15s">
+        <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div>
+        <div class="trust-badge-txt"><h4>Ervaren vakmensen</h4><p>Eigen teams, gespecialiseerd per techniek.</p></div>
+      </div>
+      <div class="trust-badge reveal" style="transition-delay:.2s">
+        <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div class="trust-badge-txt"><h4>Gecertificeerde materialen</h4><p>Van toonaangevende merken.</p></div>
+      </div>
+      <div class="trust-badge reveal" style="transition-delay:.25s">
+        <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+        <div class="trust-badge-txt"><h4>Transparante offerte</h4><p>Duidelijke prijzen, geen verborgen kosten.</p></div>
+      </div>
+      <div class="trust-badge reveal" style="transition-delay:.3s">
+        <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <div class="trust-badge-txt"><h4>&Eacute;&eacute;n aanspreekpunt</h4><p>Persoonlijk contact tijdens heel het project.</p></div>
+      </div>
+      <div class="trust-badge reveal" style="transition-delay:.35s">
+        <div class="trust-badge-icon"><svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div>
+        <div class="trust-badge-txt"><h4>Actief in heel Vlaanderen</h4><p>Van kust tot Kempen.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS (ready for Google Reviews) ===== -->
+<section>
+  <div class="si">
+    <div class="section-center reveal">
+      <p class="section-label">Klantervaringen</p>
+      <h2 class="section-title">Wat klanten zeggen</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="reviews-grid">
+      <div class="reviews-empty reveal">
+        <p>Binnenkort tonen wij hier echte beoordelingen van onze klanten. Bekijk ondertussen onze <a href="/projecten/">projecten met voor- en nafoto's</a> of <a href="/contact/">vraag een gratis plaatsbezoek aan</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== VOOR & NA PREVIEW ===== -->
 <section style="background:var(--off)">
   <div class="si">
@@ -324,22 +455,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2.5rem">
       <div class="reveal" style="position:relative;border-radius:8px;overflow:hidden">
-        <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/steenstrips_voor.JPG"
+        <img src="/steenstrips_voor.JPG"
              alt="Gevel voor steenstrips renovatie" width="580" height="380" loading="lazy" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block">
         <div class="vn-label" data-i18n="vn.voor.steel">Voor — Steenstrips</div>
       </div>
       <div class="reveal-r" style="position:relative;border-radius:8px;overflow:hidden">
-        <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/steenstrips_na2.JPG"
+        <img src="/steenstrips_na2.JPG"
              alt="Gevel na steenstrips renovatie" width="580" height="380" loading="lazy" style="width:100%;height:300px;object-fit:cover;object-position:center top;display:block">
         <div class="vn-label" style="background:linear-gradient(transparent,rgba(232,165,0,.85));color:var(--navy)" data-i18n="vn.na.steel">Na — Steenstrips</div>
       </div>
       <div class="reveal" style="position:relative;border-radius:8px;overflow:hidden">
-        <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/crepi_voor.jpeg"
+        <img src="/crepi_voor.jpeg"
              alt="Gevel voor crepi renovatie" width="580" height="380" loading="lazy" style="width:100%;height:300px;object-fit:cover;object-position:center center;display:block">
         <div class="vn-label" data-i18n="vn.voor.crepi">Voor — Crepi</div>
       </div>
       <div class="reveal-r" style="position:relative;border-radius:8px;overflow:hidden">
-        <img src="https://raw.githubusercontent.com/vikabaranecz-ui/Tim/main/crepi_na.png"
+        <img src="/crepi_na.png"
              alt="Gevel na crepi renovatie" width="580" height="380" loading="lazy" style="width:100%;height:300px;object-fit:cover;object-position:center center;display:block">
         <div class="vn-label" style="background:linear-gradient(transparent,rgba(232,165,0,.85));color:var(--navy)" data-i18n="vn.na.crepi">Na — Crepi</div>
       </div>
@@ -355,7 +486,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="si reveal">
     <h2 data-i18n="cta.h2">Klaar voor een perfecte gevel of dak?</h2>
     <p data-i18n="cta.p">Neem vandaag nog contact op voor een gratis plaatsbezoek en vrijblijvende offerte. Wij staan voor u klaar in heel Vlaanderen.</p>
-    <a href="/contact/" class="btn-primary" data-i18n="cta.btn">Offerte aanvragen</a>
+    <a href="/contact/" class="btn-primary" data-i18n="cta.btn">Plan gratis plaatsbezoek</a>
   </div>
 </section>
 
@@ -369,25 +500,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="contact-grid">
       <div class="reveal">
-        <form class="contact-form" novalidate>
+        <form class="contact-form" action="https://formspree.io/f/xoeqkoon" method="POST">
+          <input type="hidden" name="_subject" value="Nieuwe offerteaanvraag — T.F.M. Construct website">
+          <input type="hidden" name="_next" value="https://www.tfmconstruct.be/bedankt/">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-group">
             <label for="naam" data-i18n="form.naam">Naam *</label>
-            <input type="text" id="naam" name="naam" placeholder="Jan Janssen" data-i18n-ph="form.ph.naam" required>
+            <input type="text" id="naam" name="naam" placeholder="Jan Janssen" data-i18n-ph="form.ph.naam" required autocomplete="name">
           </div>
           <div class="form-group">
             <label for="tel" data-i18n="form.tel">Telefoonnummer *</label>
-            <input type="tel" id="tel" name="tel" placeholder="+32 4 75 00 00 00" required>
+            <input type="tel" id="tel" name="tel" placeholder="+32 4 75 00 00 00" required autocomplete="tel">
           </div>
           <div class="form-group">
             <label for="email" data-i18n="form.email">E-mailadres *</label>
-            <input type="email" id="email" name="email" placeholder="jan@email.be" required>
+            <input type="email" id="email" name="email" placeholder="jan@email.be" required autocomplete="email">
           </div>
           <div class="form-group">
-            <label for="bericht" data-i18n="form.bericht">Bericht</label>
+            <label for="postcode" data-i18n="form.postcode">Postcode *</label>
+            <input type="text" id="postcode" name="postcode" placeholder="1600" pattern="[0-9]{4}" inputmode="numeric" maxlength="4" required autocomplete="postal-code">
+          </div>
+          <div class="form-group">
+            <label for="dienst" data-i18n="form.dienst">Gewenste dienst *</label>
+            <select id="dienst" name="dienst" required>
+              <option value="" disabled selected data-i18n-opt="form.dienst.select">Selecteer een dienst</option>
+              <option value="Gevelisolatie">Gevelisolatie</option>
+              <option value="Crepi">Crepi</option>
+              <option value="Spuitkurk">Spuitkurk</option>
+              <option value="Steenstrips">Steenstrips</option>
+              <option value="Kaleien">Kaleien</option>
+              <option value="Dakrenovatie">Dakrenovatie</option>
+              <option value="Dakisolatie">Dakisolatie</option>
+              <option value="Andere werken" data-i18n-opt="form.dienst.andere">Andere werken</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bericht" data-i18n="form.bericht">Bericht <span style="font-weight:400;text-transform:none;font-family:Inter,sans-serif;font-size:.8rem;color:#888">(optioneel)</span></label>
             <textarea id="bericht" name="bericht" placeholder="Beschrijf uw project..." data-i18n-ph="form.ph.bericht"></textarea>
           </div>
-          <button type="submit" class="btn-primary form-submit" data-i18n="form.submit">Verstuur aanvraag</button>
-          <p class="form-note" data-i18n="form.note">Wij antwoorden binnen 24 uur. Uw gegevens worden nooit gedeeld met derden.</p>
+          <button type="submit" class="btn-primary form-submit" data-i18n="form.submit">Vraag gratis plaatsbezoek aan</button>
+          <p class="form-note" data-i18n="form.note">Uw gegevens worden nooit gedeeld met derden.</p>
         </form>
       </div>
       <div class="contact-info reveal-r">
@@ -439,6 +591,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="footer-brand">
         <img src="/logo.svg" class="logo-img logo-white" alt="T.F.M. Construct BV" width="160" height="90" loading="lazy">
         <p data-i18n="footer.brand">T.F.M. Construct BV is uw specialist in gevel- en dakwerken in Vlaanderen. Kwaliteit, vakmanschap en garantie staan bij ons centraal.</p>
+        <p style="margin-top:1rem;font-size:.85rem;color:rgba(255,255,255,.55)">Bergensesteenweg 24/8, 1600 Sint-Pieters-Leeuw<br>BE 0800.172.103</p>
       </div>
       <div>
         <h4 data-i18n="footer.nav">Navigatie</h4>
@@ -448,17 +601,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="/diensten/" data-i18n="nav.diensten">Diensten</a>
           <a href="/projecten/" data-i18n="nav.projecten">Projecten</a>
           <a href="/contact/" data-i18n="nav.contact">Contact</a>
+          <a href="/privacybeleid/">Privacybeleid</a>
+          <a href="/cookiebeleid/">Cookiebeleid</a>
         </nav>
       </div>
       <div>
         <h4 data-i18n="footer.svc">Diensten</h4>
         <nav class="footer-links" aria-label="Diensten navigatie">
-          <a href="/diensten/#spuitkurk" data-i18n="svc.spuitkurk">Spuitkurk</a>
-          <a href="/diensten/#crepi" data-i18n="svc.crepi">Crepi</a>
-          <a href="/diensten/#gevelisolatie" data-i18n="svc.gevelisolatie">Gevelisolatie</a>
-          <a href="/diensten/#kaleien" data-i18n="svc.kaleien">Kaleien</a>
-          <a href="/diensten/#steenstrips" data-i18n="svc.steenstrips">Steenstrips</a>
-          <a href="/diensten/#dakrenovatie" data-i18n="svc.dakrenovatie">Dakrenovatie</a>
+          <a href="/diensten/spuitkurk/" data-i18n="svc.spuitkurk">Spuitkurk</a>
+          <a href="/diensten/crepi/" data-i18n="svc.crepi">Crepi</a>
+          <a href="/diensten/gevelisolatie/" data-i18n="svc.gevelisolatie">Gevelisolatie</a>
+          <a href="/diensten/kaleien/" data-i18n="svc.kaleien">Kaleien</a>
+          <a href="/diensten/steenstrips/" data-i18n="svc.steenstrips">Steenstrips</a>
+          <a href="/diensten/dakrenovatie/" data-i18n="svc.dakrenovatie">Dakrenovatie</a>
+          <a href="/diensten/dakisolatie/">Dakisolatie</a>
         </nav>
       </div>
     </div>
