@@ -1,0 +1,16 @@
+Options -Indexes
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Force www
+RewriteCond %{HTTP_HOST} ^tfmconstruct\.be$ [NC]
+RewriteRule ^ https://www.tfmconstruct.be%{REQUEST_URI} [L,R=301]
+
+# Redirect old .html URLs to clean directory URLs
+RewriteRule ^contact\.html$ /contact/ [L,R=301]
+RewriteRule ^diensten\.html$ /diensten/ [L,R=301]
+RewriteRule ^over-ons\.html$ /over-ons/ [L,R=301]
+RewriteRule ^projecten\.html$ /projecten/ [L,R=301]

@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Disallow: /tfm_construct_site_v4.html
+
 Sitemap: https://www.tfmconstruct.be/sitemap.xml
