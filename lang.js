@@ -235,6 +235,20 @@ const LANG = {
     'prj.04.vraag':'Frisse, duurzame gevelafwerking zonder grote verbouwing',
     'prj.04.aanpak':'Reiniging van de gevel, herstel van scheuren, spuitkurk in twee lagen aangebracht',
     'prj.04.res':'Egale, dampopen afwerking &mdash; waterdicht en onderhoudsarm',
+    /* project 05 green crepi huis */
+    'prj.05.type':'Crepi',
+    'prj.05.title':'Vrijstaande woning &mdash; gevelisolatie met groene crepi afwerking',
+    'prj.05.sit':'Woning met verouderde gevel, klant wenste een opvallende kleuraccent',
+    'prj.05.vraag':'Gevelisolatie met een frisse crepi-afwerking in een groene tint',
+    'prj.05.aanpak':'Isolatieplaten aangebracht, wapeningslaag en grondlaag, afwerklaag crepi in groene tint naar keuze van de klant',
+    'prj.05.res':'Goed ge&iuml;soleerde, waterdichte gevel met een opvallende en moderne uitstraling',
+    /* project 06 apartament crepi */
+    'prj.06.type':'Crepi',
+    'prj.06.title':'Appartementsgebouw &mdash; gevelrenovatie met crepi afwerking',
+    'prj.06.sit':'Appartementsgebouw met verouderde en verweerde gevel',
+    'prj.06.vraag':'Volledige gevelrenovatie met een duurzame crepi-afwerking voor het gebouw',
+    'prj.06.aanpak':'Herstel van de ondergrond, wapeningslaag en grondlaag, afwerklaag crepi aangebracht over de volledige gevel',
+    'prj.06.res':'Vernieuwde, waterdichte gevel met een uniforme en frisse uitstraling',
     /* CONTACT */
     'cnt.hero.label':'Neem contact op',
     'cnt.hero.h1':'Contact &amp; Offerte',
@@ -547,6 +561,20 @@ const LANG = {
     'prj.04.vraag':'Revêtement de façade frais et durable sans gros travaux',
     'prj.04.aanpak':'Nettoyage de la façade, réparation des fissures, enduit liège appliqué en deux couches',
     'prj.04.res':'Finition homogène et respirante &mdash; étanche et facile d\'entretien',
+    /* project 05 green crepi huis */
+    'prj.05.type':'Crépi',
+    'prj.05.title':'Habitation individuelle &mdash; isolation de façade avec finition crépi verte',
+    'prj.05.sit':'Habitation avec façade vieillissante, le client souhaitait un accent de couleur marquant',
+    'prj.05.vraag':'Isolation de façade avec une finition crépi fraîche dans une teinte verte',
+    'prj.05.aanpak':'Panneaux isolants posés, enduit de base avec filet d\'armature, primer, crépi en teinte verte selon le choix du client',
+    'prj.05.res':'Façade bien isolée et étanche avec un rendu moderne et remarquable',
+    /* project 06 apartament crepi */
+    'prj.06.type':'Crépi',
+    'prj.06.title':'Immeuble à appartements &mdash; rénovation de façade avec finition crépi',
+    'prj.06.sit':'Immeuble à appartements avec façade vieillissante et dégradée',
+    'prj.06.vraag':'Rénovation complète de la façade avec une finition crépi durable pour l\'immeuble',
+    'prj.06.aanpak':'Réparation du support, enduit de base avec filet d\'armature, crépi appliqué sur l\'ensemble de la façade',
+    'prj.06.res':'Façade rénovée et étanche avec un rendu uniforme et frais',
     /* CONTACT */
     'cnt.hero.label':'Nous contacter',
     'cnt.hero.h1':'Contact &amp; Devis',
