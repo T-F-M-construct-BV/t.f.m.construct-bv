@@ -712,6 +712,115 @@ function applyLang(lang) {
     btn.setAttribute('aria-pressed', btn.dataset.lang === lang);
   });
   localStorage.setItem('tfm_lang', lang);
+  tfmPageLang(lang);
+}
+
+/* ===== PAGE CONTENT IN FRENCH =====
+   Text without a data-i18n key is translated with window.TFM_FR (fr-pages.js),
+   keyed by the exact Dutch text. fr-pages.js is only downloaded when FR is chosen.
+   Every change is recorded so switching back to NL restores the original Dutch. */
+var tfmFrChanges = [];
+var tfmFrObserver = null;
+var tfmFrLoading = false;
+var TFM_SKIP = 'script,style,noscript,svg,[data-i18n],[data-i18n-opt],[data-fr-done]';
+var TFM_UNITS = 'p,li,h1,h2,h3,h4,h5,h6,label,td,th,figcaption,dt,dd,button,a,span,strong,small,div,option';
+
+function tfmNorm(s) { return s.replace(/\s+/g, ' ').trim(); }
+
+function tfmTranslateTree(root) {
+  var M = window.TFM_FR;
+  if (!M || !root) return;
+  if (root.nodeType === 3) { tfmTranslateText(root, M); return; }
+  if (root.nodeType !== 1) return;
+  /* 1. whole blocks (keeps links and formatting inside) */
+  var els = [root].concat(Array.prototype.slice.call(root.querySelectorAll(TFM_UNITS)));
+  els.forEach(function (el) {
+    if (!el.matches || !el.matches(TFM_UNITS) || el.closest(TFM_SKIP)) return;
+    if (el.childElementCount > 12 || el.textContent.length > 2000) return;
+    var fr = M.el[tfmNorm(el.innerHTML)];
+    if (fr === undefined) return;
+    tfmFrChanges.push({ type: 'html', el: el, val: el.innerHTML });
+    el.innerHTML = fr;
+    el.setAttribute('data-fr-done', '');
+  });
+  /* 2. loose text (link lists, buttons with icons) */
+  var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  var node, texts = [];
+  while ((node = walker.nextNode())) texts.push(node);
+  texts.forEach(function (n) { tfmTranslateText(n, M); });
+  /* 3. attributes */
+  var attrEls = [root].concat(Array.prototype.slice.call(root.querySelectorAll('[alt],[placeholder],[aria-label],[title]')));
+  attrEls.forEach(function (el) {
+    if (!el.getAttribute) return;
+    ['alt', 'placeholder', 'aria-label', 'title'].forEach(function (a) {
+      if (!el.hasAttribute(a)) return;
+      if (a === 'placeholder' && el.hasAttribute('data-i18n-ph')) return;
+      if (a === 'aria-label' && el.hasAttribute('data-i18n-aria')) return;
+      var v = el.getAttribute(a), fr = M.attr[tfmNorm(v)];
+      if (fr === undefined) return;
+      tfmFrChanges.push({ type: 'attr', el: el, attr: a, val: v });
+      el.setAttribute(a, fr);
+    });
+  });
+}
+
+function tfmTranslateText(n, M) {
+  var p = n.parentElement;
+  if (!p || p.closest(TFM_SKIP)) return;
+  var t = tfmNorm(n.nodeValue);
+  if (!t) return;
+  var fr = M.txt[t];
+  if (fr === undefined) return;
+  var m = n.nodeValue.match(/^(\s*)[\s\S]*?(\s*)$/);
+  tfmFrChanges.push({ type: 'text', node: n, val: n.nodeValue });
+  n.nodeValue = m[1] + fr + m[2];
+}
+
+function tfmTranslateDoc() {
+  var M = window.TFM_FR, d = document.querySelector('meta[name="description"]');
+  var t = M.doc[tfmNorm(document.title)];
+  if (t !== undefined) { tfmFrChanges.push({ type: 'title', val: document.title }); document.title = t; }
+  if (d) {
+    var dv = M.doc[tfmNorm(d.content)];
+    if (dv !== undefined) { tfmFrChanges.push({ type: 'attr', el: d, attr: 'content', val: d.content }); d.content = dv; }
+  }
+}
+
+function tfmRestoreNL() {
+  if (tfmFrObserver) tfmFrObserver.disconnect();
+  for (var i = tfmFrChanges.length - 1; i >= 0; i--) {
+    var c = tfmFrChanges[i];
+    if (c.type === 'html') { c.el.innerHTML = c.val; c.el.removeAttribute('data-fr-done'); }
+    else if (c.type === 'text') c.node.nodeValue = c.val;
+    else if (c.type === 'attr') c.el.setAttribute(c.attr, c.val);
+    else if (c.type === 'title') document.title = c.val;
+  }
+  tfmFrChanges = [];
+}
+
+function tfmApplyFR() {
+  if (localStorage.getItem('tfm_lang') !== 'fr') return;
+  tfmRestoreNL();
+  tfmTranslateTree(document.body);
+  tfmTranslateDoc();
+  /* translate content added later (cookie banner, form messages, ...) */
+  tfmFrObserver = new MutationObserver(function (list) {
+    tfmFrObserver.disconnect();
+    list.forEach(function (m) { m.addedNodes.forEach(tfmTranslateTree); });
+    tfmFrObserver.observe(document.body, { childList: true, subtree: true });
+  });
+  tfmFrObserver.observe(document.body, { childList: true, subtree: true });
+}
+
+function tfmPageLang(lang) {
+  if (lang !== 'fr') { tfmRestoreNL(); return; }
+  if (window.TFM_FR) { tfmApplyFR(); return; }
+  if (tfmFrLoading) return;
+  tfmFrLoading = true;
+  var s = document.createElement('script');
+  s.src = '/fr-pages.js';
+  s.onload = tfmApplyFR;
+  document.head.appendChild(s);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
