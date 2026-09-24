@@ -34,7 +34,7 @@ const LANG = {
     'idx.gevel.title':'Gevelwerken',
     'idx.gevel.count':'5 diensten',
     'idx.dak.title':'Dakwerken',
-    'idx.dak.count':'2 diensten',
+    'idx.dak.count':'4 diensten',
     'idx.svc.more':'Meer info &rarr;',
     /* service cards */
     'svc.gevelisolatie':'Gevelisolatie',
@@ -51,6 +51,10 @@ const LANG = {
     'svc.dakrenovatie.desc':'Volledige dakrenovatie door erkende vakmensen. Wij herstellen en vernieuwen uw dak met hoogwaardige materialen en garantie.',
     'svc.dakisolatie':'Dakisolatie',
     'svc.dakisolatie.desc':'Effectieve dakisolatie die energieverlies drastisch vermindert. Betere thermische prestaties en lager energieverbruik.',
+    'svc.dakschilderen':'Dakpannen schilderen',
+    'svc.dakschilderen.desc':'Nieuwe kleur en een beschermende coating voor uw dakpannen, zonder volledige dakrenovatie.',
+    'svc.dakreiniging':'Dakreiniging',
+    'svc.dakreiniging.desc':'Mos, algen en vuil vakkundig verwijderd, met anti-mosbehandeling voor een langere levensduur.',
     'idx.svc.all':'Alle diensten bekijken',
     /* INDEX — MAP */
     'idx.map.label':'Werkgebied',
@@ -361,7 +365,7 @@ const LANG = {
     'idx.gevel.title':'Travaux de façade',
     'idx.gevel.count':'5 services',
     'idx.dak.title':'Travaux de toiture',
-    'idx.dak.count':'2 services',
+    'idx.dak.count':'4 services',
     'idx.svc.more':'En savoir plus &rarr;',
     /* service cards */
     'svc.gevelisolatie':'Isolation de façade',
@@ -378,6 +382,10 @@ const LANG = {
     'svc.dakrenovatie.desc':'Rénovation complète de toiture par des artisans qualifiés. Nous réparons et renouvelons votre toit avec des matériaux de qualité et une garantie.',
     'svc.dakisolatie':'Isolation de toiture',
     'svc.dakisolatie.desc':'Isolation de toiture efficace qui réduit considérablement les déperditions énergétiques. Meilleures performances thermiques et consommation réduite.',
+    'svc.dakschilderen':'Peinture de toiture',
+    'svc.dakschilderen.desc':'Une nouvelle couleur et un revêtement protecteur pour vos tuiles, sans rénovation complète de la toiture.',
+    'svc.dakreiniging':'Nettoyage de toiture',
+    'svc.dakreiniging.desc':'Mousses, algues et saletés éliminées par des professionnels, avec traitement anti-mousse pour prolonger la durée de vie du toit.',
     'idx.svc.all':'Voir tous les services',
     /* INDEX — MAP */
     'idx.map.label':'Zone d\'intervention',
