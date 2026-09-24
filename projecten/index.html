@@ -87,7 +87,9 @@
     {"@type":"ListItem","position":3,"name":"Residentiële woning — vernieuwde gevel met kaleien","url":"https://www.tfmconstruct.be/projecten/#kaleien"},
     {"@type":"ListItem","position":4,"name":"Residentiële woning — gevelrenovatie met spuitkurk","url":"https://www.tfmconstruct.be/projecten/#spuitkurk"},
     {"@type":"ListItem","position":5,"name":"Vrijstaande woning — gevelisolatie met groene crepi afwerking","url":"https://www.tfmconstruct.be/projecten/#green-crepi-huis"},
-    {"@type":"ListItem","position":6,"name":"Appartementsgebouw — gevelrenovatie met crepi afwerking","url":"https://www.tfmconstruct.be/projecten/#apartament-crepi"}
+    {"@type":"ListItem","position":6,"name":"Appartementsgebouw — gevelrenovatie met crepi afwerking","url":"https://www.tfmconstruct.be/projecten/#apartament-crepi"},
+    {"@type":"ListItem","position":7,"name":"Woning met zwart pannendak — dakpannen gereinigd en geschilderd","url":"https://www.tfmconstruct.be/projecten/#dakschilderen"},
+    {"@type":"ListItem","position":8,"name":"Woning met oranje pannendak — professionele dakreiniging","url":"https://www.tfmconstruct.be/projecten/#dakreiniging"}
   ]}
   </script>
 
@@ -133,6 +135,9 @@
     .pcard-extra { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid rgba(5,40,76,.05); max-height:0; overflow:hidden; transition:max-height .5s ease; }
     .pcard-extra.open { max-height:600px; }
     .pcard-extra .pcard-photo { aspect-ratio:3/2; }
+    .pcard-extra .pcard-video { aspect-ratio:9/16; margin:0; background:#000; }
+    .pcard-video video { width:100%; height:100%; object-fit:cover; display:block; }
+    .pcard-extra-videos.open { max-height:1400px; }
 
     /* Mobile */
     @media(max-width:768px){
@@ -275,7 +280,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
         </div>
       </div>
-      <div class="pcard-toggle"><a href="/diensten/crepi/" class="pcard-svc-link">Bekijk de dienst: Crepi &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false" data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-toggle"><a href="/diensten/crepi/" class="pcard-svc-link">Bekijk de dienst: Crepi &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false"><span data-i18n="prj.toggle">Bekijk uitvoering</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="pcard-extra">
         <div class="pcard-photo" data-lb>
           <img src="/isolatie_.jpeg"
@@ -330,7 +335,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
         </div>
       </div>
-      <div class="pcard-toggle"><a href="/diensten/steenstrips/" class="pcard-svc-link">Bekijk de dienst: Steenstrips &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false" data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-toggle"><a href="/diensten/steenstrips/" class="pcard-svc-link">Bekijk de dienst: Steenstrips &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false"><span data-i18n="prj.toggle">Bekijk uitvoering</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="pcard-extra">
         <div class="pcard-photo" data-lb>
           <img src="/steenstrips_op_het_werk.JPG"
@@ -385,7 +390,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
         </div>
       </div>
-      <div class="pcard-toggle"><a href="/diensten/kaleien/" class="pcard-svc-link">Bekijk de dienst: Kaleien &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false" data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-toggle"><a href="/diensten/kaleien/" class="pcard-svc-link">Bekijk de dienst: Kaleien &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false"><span data-i18n="prj.toggle">Bekijk uitvoering</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="pcard-extra">
         <div class="pcard-photo" data-lb>
           <img src="/kaleien_op_het_werk.jpg"
@@ -440,7 +445,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
         </div>
       </div>
-      <div class="pcard-toggle"><a href="/diensten/spuitkurk/" class="pcard-svc-link">Bekijk de dienst: Spuitkurk &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false" data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-toggle"><a href="/diensten/spuitkurk/" class="pcard-svc-link">Bekijk de dienst: Spuitkurk &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false"><span data-i18n="prj.toggle">Bekijk uitvoering</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="pcard-extra">
         <div class="pcard-photo" data-lb>
           <img src="/spuitkurk_tijdens_zwart.jpg"
@@ -495,7 +500,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
         </div>
       </div>
-      <div class="pcard-toggle"><a href="/diensten/crepi/" class="pcard-svc-link">Bekijk de dienst: Crepi &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false" data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-toggle"><a href="/diensten/crepi/" class="pcard-svc-link">Bekijk de dienst: Crepi &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false"><span data-i18n="prj.toggle">Bekijk uitvoering</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="pcard-extra">
         <div class="pcard-photo" data-lb>
           <img src="/projecten/green_crepi_huis_before2.JPG"
@@ -550,7 +555,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
         </div>
       </div>
-      <div class="pcard-toggle"><a href="/diensten/crepi/" class="pcard-svc-link">Bekijk de dienst: Crepi &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false" data-i18n="prj.toggle">Bekijk uitvoering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-toggle"><a href="/diensten/crepi/" class="pcard-svc-link">Bekijk de dienst: Crepi &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false"><span data-i18n="prj.toggle">Bekijk uitvoering</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="pcard-extra">
         <div class="pcard-photo" data-lb>
           <img src="/projecten/apartament_crepi_before2.JPG"
@@ -564,6 +569,119 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <img src="/projecten/apartament_crepi_after2.JPG"
                alt="Gevel appartementsgebouw na crepi, detail" width="480" height="320" loading="lazy">
         </div>
+      </div>
+    </article>
+
+    <!-- 07 DAKPANNEN SCHILDEREN -->
+    <article class="pcard reveal" id="dakschilderen" style="transition-delay:.28s">
+      <div class="pcard-meta">
+        <span class="pcard-num">07</span>
+        <span class="pcard-type" data-i18n="prj.07.type">Dakpannen schilderen</span>
+      </div>
+      <h3 class="pcard-title" data-i18n="prj.07.title">Woning met zwart pannendak &mdash; dakpannen gereinigd en geschilderd</h3>
+      <div class="pcard-divider"></div>
+      <div class="pcard-facts">
+        <div class="pcard-fact">
+          <div class="fact-label" data-i18n="prj.situatie">Situatie</div>
+          <div class="fact-text" data-i18n="prj.07.sit">Verweerd pannendak met mos, kalkaanslag en verkleurde dakpannen</div>
+        </div>
+        <div class="pcard-fact">
+          <div class="fact-label" data-i18n="prj.vraag">Vraag van de klant</div>
+          <div class="fact-text" data-i18n="prj.07.vraag">Het dak opnieuw een verzorgde uitstraling en extra bescherming geven, zonder volledige dakrenovatie</div>
+        </div>
+        <div class="pcard-fact">
+          <div class="fact-label" data-i18n="prj.aanpak">Onze aanpak</div>
+          <div class="fact-text" data-i18n="prj.07.aanpak">Dak grondig gereinigd met hogedruk, beschadigde pannen nagekeken en afgewerkt met een nieuwe zwarte dakcoating</div>
+        </div>
+        <div class="pcard-fact">
+          <div class="fact-label" data-i18n="prj.resultaat">Resultaat</div>
+          <div class="fact-text" data-i18n="prj.07.res">Egaal zwart dak met een frisse, strakke uitstraling en een waterafstotende beschermlaag</div>
+        </div>
+      </div>
+      <div class="pcard-photos">
+        <div class="pcard-photo" data-lb>
+          <img src="/black_dak_schilderen_voor4.jpg"
+               alt="Zwart pannendak voor het schilderen" width="720" height="540" loading="lazy">
+          <span class="pcard-photo-label lbl-voor" data-i18n="prj.voor">Voor</span>
+        </div>
+        <div class="pcard-photo" data-lb>
+          <img src="/black_dak_schilderen_na2.jpg"
+               alt="Zwart pannendak na het schilderen" width="720" height="540" loading="lazy">
+          <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
+        </div>
+      </div>
+      <div class="pcard-toggle"><a href="/diensten/dakschilderen/" class="pcard-svc-link">Bekijk de dienst: Dakpannen schilderen &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false"><span data-i18n="prj.toggle">Bekijk uitvoering</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-extra">
+        <div class="pcard-photo" data-lb>
+          <img src="/black_dak_schilderen_voor.jpg"
+               alt="Dakpannen met mos en kalkaanslag voor de werken" width="480" height="320" loading="lazy">
+        </div>
+        <div class="pcard-photo" data-lb>
+          <img src="/black_dak_schilderen_tijdens2.jpg"
+               alt="Dakpannen schilderen in uitvoering" width="480" height="320" loading="lazy">
+        </div>
+        <div class="pcard-photo" data-lb>
+          <img src="/black_dak_schilderen_na.jpg"
+               alt="Afgewerkt dak met nieuwe zwarte coating" width="480" height="320" loading="lazy">
+        </div>
+      </div>
+    </article>
+
+    <!-- 08 DAKREINIGING -->
+    <article class="pcard reveal" id="dakreiniging" style="transition-delay:.32s">
+      <div class="pcard-meta">
+        <span class="pcard-num">08</span>
+        <span class="pcard-type" data-i18n="prj.08.type">Dakreiniging</span>
+      </div>
+      <h3 class="pcard-title" data-i18n="prj.08.title">Woning met oranje pannendak &mdash; professionele dakreiniging</h3>
+      <div class="pcard-divider"></div>
+      <div class="pcard-facts">
+        <div class="pcard-fact">
+          <div class="fact-label" data-i18n="prj.situatie">Situatie</div>
+          <div class="fact-text" data-i18n="prj.08.sit">Oranje pannendak zwaar vervuild door mos, algen en vuilaanslag</div>
+        </div>
+        <div class="pcard-fact">
+          <div class="fact-label" data-i18n="prj.vraag">Vraag van de klant</div>
+          <div class="fact-text" data-i18n="prj.08.vraag">Het dak reinigen zodat de pannen opnieuw hun oorspronkelijke kleur krijgen</div>
+        </div>
+        <div class="pcard-fact">
+          <div class="fact-label" data-i18n="prj.aanpak">Onze aanpak</div>
+          <div class="fact-text" data-i18n="prj.08.aanpak">Mos verwijderd en het dak gereinigd met een techniek aangepast aan de dakpannen</div>
+        </div>
+        <div class="pcard-fact">
+          <div class="fact-label" data-i18n="prj.resultaat">Resultaat</div>
+          <div class="fact-text" data-i18n="prj.08.res">Proper dak waarop de oorspronkelijke oranje kleur van de pannen opnieuw zichtbaar is</div>
+        </div>
+      </div>
+      <div class="pcard-photos">
+        <div class="pcard-photo" data-lb>
+          <img src="/oranje_dak_reiniging_voor.jpg"
+               alt="Oranje pannendak voor de dakreiniging" width="720" height="540" loading="lazy">
+          <span class="pcard-photo-label lbl-voor" data-i18n="prj.voor">Voor</span>
+        </div>
+        <div class="pcard-photo" data-lb>
+          <img src="/oranje_dak_reiniging_na.jpg"
+               alt="Oranje pannendak na de dakreiniging" width="720" height="540" loading="lazy">
+          <span class="pcard-photo-label lbl-na" data-i18n="prj.na">Na</span>
+        </div>
+      </div>
+      <div class="pcard-toggle"><a href="/diensten/dakreiniging/" class="pcard-svc-link">Bekijk de dienst: Dakreiniging &rarr;</a><button class="pcard-toggle-btn" aria-expanded="false"><span data-i18n="prj.toggle">Bekijk uitvoering</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="pcard-extra pcard-extra-videos">
+        <figure class="pcard-photo pcard-video">
+          <video controls playsinline preload="none" poster="/video-posters/oranje_dak_reiniging_voor.jpg" aria-label="Video van het dak voor de reiniging">
+            <source src="/oranje_dak_reiniging_voor.mp4" type="video/mp4">
+          </video>
+        </figure>
+        <figure class="pcard-photo pcard-video">
+          <video controls playsinline preload="none" poster="/video-posters/oranje_dak_reiniging_tijdens.jpg" aria-label="Video tijdens de dakreiniging">
+            <source src="/oranje_dak_reiniging_tijdens.mp4" type="video/mp4">
+          </video>
+        </figure>
+        <figure class="pcard-photo pcard-video">
+          <video controls playsinline preload="none" poster="/video-posters/oranje_dak_reiniging_na.jpg" aria-label="Video van het dak na de reiniging">
+            <source src="/oranje_dak_reiniging_na.mp4" type="video/mp4">
+          </video>
+        </figure>
       </div>
     </article>
 
@@ -642,7 +760,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const open = extra.classList.toggle("open");
       btn.classList.toggle("open", open);
       btn.setAttribute("aria-expanded", open);
-      btn.querySelector("polyline").setAttribute("points", open ? "18 15 12 9 6 15" : "6 9 12 15 18 9");
+      const line = btn.querySelector("polyline");
+      if (line) line.setAttribute("points", open ? "18 15 12 9 6 15" : "6 9 12 15 18 9");
     });
   });
 </script>
