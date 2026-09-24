@@ -228,6 +228,13 @@ section{padding:80px 0}
 .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
 .footer-brand .logo-white{background:#fff;border-radius:8px;padding:6px 10px;height:auto;width:160px}
 .footer-brand p{font-size:.9rem;margin-top:1rem;line-height:1.7;max-width:280px}
+.footer-social,.contact-social{display:flex;gap:.6rem;margin-top:1rem}
+.footer-social a,.contact-social a{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background var(--transition),transform var(--transition)}
+.footer-social a{background:rgba(255,255,255,.1)}
+.contact-social{margin-top:.4rem}
+.contact-social a{background:var(--navy)}
+.footer-social a:hover,.contact-social a:hover{background:var(--gold);transform:translateY(-2px)}
+.footer-social svg,.contact-social svg{width:18px;height:18px;fill:#fff}
 .footer h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .footer-links{display:flex;flex-direction:column;gap:.6rem}
 .footer-links a{font-size:.9rem;color:rgba(255,255,255,.7);transition:color var(--transition)}
