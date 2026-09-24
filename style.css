@@ -25,6 +25,7 @@ button{cursor:pointer;border:none;background:none;font:inherit}
   --navy:#05284C;
   --navy-dk:#021830;
   --gold:#E8A500;
+  --gold-text:#8F6300; /* darker gold for small text on light backgrounds (WCAG AA) */
   --gold-lt:#F5C842;
   --white:#fff;
   --off:#F4F6F9;
@@ -35,7 +36,7 @@ button{cursor:pointer;border:none;background:none;font:inherit}
 
 /* ---------- Typography ---------- */
 h1,h2,h3,h4{font-family:'Bebas Neue',sans-serif;line-height:1.1;letter-spacing:.03em}
-.section-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.section-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-text);margin-bottom:.5rem}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);color:var(--navy);margin-bottom:1rem}
 .section-title.light{color:var(--white)}
 .gold-line{width:56px;height:4px;background:var(--gold);border-radius:2px;margin:0 auto 2rem}
@@ -51,9 +52,9 @@ section{padding:80px 0}
 .btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,165,0,.35)}
 .btn-outline{display:inline-flex;align-items:center;gap:.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;background:transparent;color:var(--white);padding:.75rem 2rem;border-radius:var(--radius);border:2px solid var(--white);transition:background var(--transition),color var(--transition),transform var(--transition)}
 .btn-outline:hover{background:var(--white);color:var(--navy);transform:translateY(-2px)}
-.btn-wa{display:inline-flex;align-items:center;gap:.6rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;background:#25D366;color:#fff;padding:.75rem 2rem;border-radius:var(--radius);transition:background var(--transition),transform var(--transition)}
+.btn-wa{display:inline-flex;align-items:center;gap:.6rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;background:#25D366;color:var(--navy-dk);padding:.75rem 2rem;border-radius:var(--radius);transition:background var(--transition),transform var(--transition)}
 .btn-wa:hover{background:#1ebe5a;transform:translateY(-2px)}
-.btn-wa svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
+.btn-wa svg{width:20px;height:20px;fill:var(--navy-dk);flex-shrink:0}
 
 /* ---------- Navigation ---------- */
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:70px;background:#fff;border-bottom:1px solid rgba(5,40,76,.08);display:flex;align-items:center;transition:box-shadow var(--transition)}
@@ -112,12 +113,12 @@ section{padding:80px 0}
 
 /* Page hero (inner pages) */
 .page-hero{background:var(--navy-dk);padding:140px 0 80px;text-align:center}
-.page-hero .section-label{color:var(--gold)}
+.page-hero .section-label,.trust-section .section-label,.process-section .section-label{color:var(--gold)}
 .page-hero h1{color:var(--white);font-size:clamp(2.2rem,5vw,3.8rem)}
 .breadcrumb{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:.75rem;font-family:'Barlow Condensed',sans-serif;font-size:.95rem;color:rgba(255,255,255,.6)}
 .breadcrumb a{color:var(--gold);transition:opacity var(--transition)}
 .breadcrumb a:hover{opacity:.8}
-.breadcrumb span{color:rgba(255,255,255,.4)}
+.breadcrumb span{color:rgba(255,255,255,.75)}
 
 /* ---------- Stat cards ---------- */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
@@ -131,7 +132,7 @@ section{padding:80px 0}
 .services-group-header .group-icon{width:36px;height:36px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .services-group-header .group-icon svg{width:18px;height:18px;fill:none;stroke:var(--gold);stroke-width:2}
 .services-group-header h3{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--navy);letter-spacing:.05em;margin:0}
-.services-group-header .group-count{margin-left:auto;font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#888}
+.services-group-header .group-count{margin-left:auto;font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#666}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .services-grid.two-col{grid-template-columns:repeat(2,1fr)}
 .service-card{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--white);transition:transform var(--transition),box-shadow var(--transition);cursor:pointer}
@@ -142,7 +143,7 @@ section{padding:80px 0}
 .service-card-body{padding:1.25rem}
 .service-card-body h3{font-size:1.4rem;color:var(--navy);margin-bottom:.5rem}
 .service-card-body p{font-size:.9rem;color:#555;line-height:1.6}
-.service-card-link{display:inline-flex;align-items:center;gap:.3rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-top:.75rem;transition:gap var(--transition)}
+.service-card-link{display:inline-flex;align-items:center;gap:.3rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-text);margin-top:.75rem;transition:gap var(--transition)}
 .service-card-link:hover{gap:.6rem}
 
 /* ---------- Flanders Map ---------- */
@@ -199,14 +200,14 @@ section{padding:80px 0}
 .form-group textarea{resize:vertical;min-height:120px}
 .form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2305284C' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
 .form-submit{width:100%}
-.form-note{font-size:.8rem;color:#888;margin-top:.75rem;text-align:center}
+.form-note{font-size:.8rem;color:#666;margin-top:.75rem;text-align:center}
 
 /* Contact info cards */
 .contact-info{display:flex;flex-direction:column;gap:1.25rem}
 .info-card{display:flex;align-items:flex-start;gap:1rem;background:var(--off);border-radius:var(--radius);padding:1.25rem}
 .info-icon{width:44px;height:44px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .info-icon svg{width:20px;height:20px;fill:var(--gold)}
-.info-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:.2rem}
+.info-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:.2rem}
 .info-card p,.info-card a{font-size:.95rem;color:#444;transition:color var(--transition)}
 .info-card a:hover{color:var(--gold)}
 
@@ -243,7 +244,7 @@ section{padding:80px 0}
 .contact-social a{background:var(--navy)}
 .footer-social a:hover,.contact-social a:hover{background:var(--gold);transform:translateY(-2px)}
 .footer-social svg,.contact-social svg{width:18px;height:18px;fill:#fff}
-.footer h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.footer h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .footer-links{display:flex;flex-direction:column;gap:.6rem}
 .footer-links a{font-size:.9rem;color:rgba(255,255,255,.7);transition:color var(--transition)}
 .footer-links a:hover{color:var(--gold)}
@@ -470,7 +471,7 @@ section{padding:80px 0}
 .trust-badge{display:flex;align-items:flex-start;gap:.85rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:1.1rem 1.2rem}
 .trust-badge-icon{width:38px;height:38px;min-width:38px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center}
 .trust-badge-icon svg{width:18px;height:18px;stroke:var(--navy-dk);stroke-width:2.4;fill:none}
-.trust-badge-txt h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.92rem;letter-spacing:.03em;text-transform:none;color:var(--white);margin-bottom:.15rem}
+.trust-badge-txt h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.92rem;letter-spacing:.03em;text-transform:none;color:var(--white);margin-bottom:.15rem}
 .trust-badge-txt p{font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.4}
 
 /* ---------- Reviews (ready for future Google reviews) ---------- */
@@ -479,7 +480,7 @@ section{padding:80px 0}
 .review-stars{color:var(--gold);letter-spacing:.15em;font-size:1rem;margin-bottom:.6rem}
 .review-text{font-size:.92rem;color:#333;line-height:1.6;font-style:italic}
 .review-author{margin-top:1rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
-.review-author span{display:block;font-family:'Inter',sans-serif;font-weight:400;text-transform:none;letter-spacing:0;color:#888;font-size:.8rem;margin-top:.1rem}
+.review-author span{display:block;font-family:'Inter',sans-serif;font-weight:400;text-transform:none;letter-spacing:0;color:#666;font-size:.8rem;margin-top:.1rem}
 .reviews-empty{grid-column:1/-1;text-align:center;padding:2.5rem 1.5rem;background:var(--off);border-radius:var(--radius);border:1px dashed rgba(5,40,76,.2)}
 .reviews-empty p{color:#666;font-size:.95rem;max-width:480px;margin:0 auto}
 .reviews-empty a{color:var(--navy);font-weight:700;text-decoration:underline}
@@ -500,7 +501,7 @@ section{padding:80px 0}
 .related-card{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.1rem 1.4rem;transition:transform var(--transition)}
 .related-card:hover{transform:translateY(-3px)}
 .related-card-txt{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--navy);letter-spacing:.03em}
-.related-card-arrow{color:var(--gold);font-size:1.2rem;flex-shrink:0}
+.related-card-arrow{color:var(--gold-text);font-size:1.2rem;flex-shrink:0}
 
 /* ---------- Service landing page ---------- */
 .svc-hero{background:var(--navy-dk);padding:140px 0 70px}
@@ -559,7 +560,7 @@ section{padding:80px 0}
 .service-category-header.dark-bg{background:var(--navy-dk)}
 .service-category-header.dark-bg .section-title{color:var(--white)}
 .service-category-header.dark-bg .section-label{color:var(--gold)}
-.service-category-subtitle{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:#888;letter-spacing:.04em;margin-top:.25rem}
+.service-category-subtitle{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:#666;letter-spacing:.04em;margin-top:.25rem}
 .service-category-header.dark-bg .service-category-subtitle{color:rgba(255,255,255,.6)}
 .dakwerken-section{background:var(--navy-dk)}
 .dakwerken-section .service-row{border-bottom-color:rgba(255,255,255,.1)}
