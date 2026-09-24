@@ -598,3 +598,16 @@
     });
   });
 })();
+
+// LAZY VIDEO POSTERS — posters load only when the video nears the viewport
+(function(){
+  function show(v){ v.setAttribute('poster', v.dataset.poster); v.removeAttribute('data-poster'); }
+  document.addEventListener('DOMContentLoaded',()=>{
+    const vids = document.querySelectorAll('video[data-poster]');
+    if(!('IntersectionObserver' in window)){ vids.forEach(show); return; }
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ show(e.target); io.unobserve(e.target); } });
+    },{ rootMargin:'400px 0px' });
+    vids.forEach(v=>io.observe(v));
+  });
+})();
