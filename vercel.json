@@ -1,11 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/((?!onderhoud|logo\\.webp|fonts/|favicon|apple-touch-icon|robots\\.txt).*)",
-      "destination": "/onderhoud/",
-      "permanent": false
-    },
-    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
